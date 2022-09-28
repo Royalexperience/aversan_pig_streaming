@@ -19,7 +19,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter_native_splash:
-  color: "#000000"
+  color: "#804D63"
   image: assets/pig.png
 flutter:
 
