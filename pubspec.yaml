@@ -19,16 +19,25 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^2.0.0
 
+#########################################
 flutter_native_splash:
-  color: "#995C76"
+  color: "#995C76" 
   color_dark: "#2B2725"
   image: assets/pig.png
+#########################################
 
+#########################################
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/icon.png"
+  image_path: assets/launcher_icon.png
+  adaptive_icon_foreground: assets/launcher_icon.png
+  adaptive_icon_background: "#2B2725"
+  background_color: "#2B2725"
   min_sdk_android: 21 # android min sdk min:16, default 21
+#########################################
+
+
 
 flutter:
 
