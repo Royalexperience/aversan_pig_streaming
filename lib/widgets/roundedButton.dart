@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
 class RoundedButton extends StatelessWidget {
-  final String? text;
-  final Function? press;
-  final Color? color;
-  final Color? textColor;
+  final String text;
+  final VoidCallback press;
+  final Color color;
+  final Color textColor;
 
-  const RoundedButton(
-      {this.text, this.press, this.color, this.textColor, super.key});
+  const RoundedButton(this.text, this.press, this.color, this.textColor, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +14,11 @@ class RoundedButton extends StatelessWidget {
       width: double.infinity,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(29),
-        child: const TextButton(
-          onPressed: null, 
+        child: TextButton(
+          onPressed: press,
           child: Text(
-            "Registrati",
-            style: TextStyle(),
+            text,
+            style: TextStyle(color: textColor),
           ),
           style: ButtonStyle()
         ),

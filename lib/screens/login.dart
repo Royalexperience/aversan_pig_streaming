@@ -1,4 +1,4 @@
-import 'package:aversan_pig_streaming/themes/customColors.dart';
+import 'package:aversan_pig_streaming/constants/themes/darkColorScheme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +10,9 @@ class LoginPage extends StatelessWidget  {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const <Widget>[
+        children: <Widget>[
+          Image.asset('assets/icon1x.png'),
+          SizedBox(height: 10),
           Center(
             child: Text(
               "Aversan Pig Streaming",

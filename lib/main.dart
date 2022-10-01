@@ -1,5 +1,5 @@
 import 'package:aversan_pig_streaming/screens/login.dart';
-import 'package:aversan_pig_streaming/themes/customColors.dart';
+import 'package:aversan_pig_streaming/constants/themes/darkColorScheme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
