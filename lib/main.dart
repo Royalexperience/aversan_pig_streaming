@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 
 ThemeData _defaultTheme() {
   return ThemeData(
-    scaffoldBackgroundColor: darkBackgroundColor,
+    scaffoldBackgroundColor: DARK_BACKGROUND_COLOR,
     fontFamily: 'Roboto',
     textTheme: const TextTheme(
       headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
