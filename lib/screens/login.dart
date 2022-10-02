@@ -15,7 +15,7 @@ class LoginPage extends StatelessWidget {
         children: <Widget>[
           Image.asset('assets/pig_Hd.png'),
           Container(
-            margin: EdgeInsets.all(10),
+            margin: EdgeInsets.only(top: 0, bottom: 10),
             child: Center(
               child: Text(
                 APPLICATION_NAME,
