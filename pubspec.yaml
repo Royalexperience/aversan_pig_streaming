@@ -43,5 +43,6 @@ flutter:
 
   uses-material-design: true
   assets:
+    - assets/pig_Hd.png
     - assets/pig.png
     - assets/icon1x.png

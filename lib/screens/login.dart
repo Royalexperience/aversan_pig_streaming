@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Image.asset('assets/pig.png'),
+          Image.asset('assets/pig_Hd.png'),
           Container(
             margin: EdgeInsets.all(10),
             child: Center(
