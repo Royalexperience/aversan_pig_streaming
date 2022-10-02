@@ -13,33 +13,9 @@ class LoginPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Image.asset('assets/pig_Hd.png'),
+          Image.asset(IMAGE_PIG_HD_2_PATH),
           Container(
-            margin: EdgeInsets.only(top: 0, bottom: 10),
-            child: Center(
-              child: Text(
-                APPLICATION_NAME,
-                style: TextStyle(
-                  fontSize: FONT_SIZE_HUGE,
-                  fontWeight: FontWeight.bold,
-                  color: WHITE,
-                ),
-              ),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            child: Center(
-                child: Text(
-              DESCRIPTION_LOGIN_PAGE,
-              style: TextStyle(
-                fontSize: FONT_SIZE_BIG,
-                color: GREY,
-              ),
-            )),
-          ),
-          Container(
-            margin: EdgeInsets.all(25),
+            margin: EdgeInsets.all(5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -61,7 +37,7 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 25, bottom: 15),
+            margin: EdgeInsets.only(top: 15, bottom: 15),
             child: RoundedButton(SIGN_UP_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE)
           ),
           RoundedButton(SIGN_UP_WGOOGLE_ITALIAN, () {}, WHITE, MAIN_BLACK),

@@ -10,3 +10,5 @@ const String DESCRIPTION_LOGIN_PAGE = "Streaming like a pig";
 const String ALREADY_ACCOUNT_ITALIAN = "Hai già un account? ";
 // ignore: constant_identifier_names
 const String LOGIN = "Log in";
+// ignore: constant_identifier_names
+const String IMAGE_PIG_HD_2_PATH = 'assets/pig_Hd_video_white.png';
