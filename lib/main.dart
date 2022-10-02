@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
 ThemeData _darkTheme() {
   return ThemeData(
     scaffoldBackgroundColor: DARK_BACKGROUND_COLOR,
-    fontFamily: 'Roboto',
+    fontFamily: 'Coolvetica',
     /*
     textTheme: const TextTheme(
       headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),

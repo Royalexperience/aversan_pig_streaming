@@ -46,10 +46,10 @@ flutter:
     - assets/images/pig_Hd_video_white.png
     - assets/images/pig.png
   fonts:
-    - family: Raleway
+    - family: Coolvetica
       fonts:
-        - asset: fonts/coolvetica compressed hv
-        - asset: fonts/coolvetica condensed rg
-        - asset: fonts/coolvetica crammed rg
-        - asset: fonts/coolvetica rg it
-        - asset: fonts/coolvetica rg
+        - asset: assets/fonts/coolvetica_compressed_hv.otf
+        - asset: assets/fonts/coolvetica_condensed_rg.otf
+        - asset: assets/fonts/coolvetica_crammed_rg.otf
+        - asset: assets/fonts/coolvetica_rg_it.otf
+        - asset: assets/fonts/coolvetica_rg.otf
