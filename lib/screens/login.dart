@@ -1,6 +1,7 @@
+import 'package:aversan_pig_streaming/constants/font_sizes.dart';
 import 'package:aversan_pig_streaming/constants/strings.dart';
-import 'package:aversan_pig_streaming/constants/themes/darkColorScheme.dart';
-import 'package:aversan_pig_streaming/widgets/roundedButton.dart';
+import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
+import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -18,9 +19,9 @@ class LoginPage extends StatelessWidget {
             child: Text(
               "Aversan Pig Streaming",
               style: TextStyle(
-                fontSize: 26.0,
+                fontSize: FONT_SIZE_HUGE,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: WHITE,
               ),
             ),
           ),
@@ -29,28 +30,34 @@ class LoginPage extends StatelessWidget {
               child: Text(
             "Streaming like a pig",
             style: TextStyle(
-              fontSize: 18.0,
-              color: Colors.grey,
+              fontSize: FONT_SIZE_BIG,
+              color: GREY,
             ),
           )),
           SizedBox(height: 45),
-          Center(
-            child: Text(
-              "Hai già un account?",
-              style: TextStyle(
-                fontSize: 16.0,
-                color: Colors.grey,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Center(
+                child: Text(
+                  "Hai già un account? ",
+                  style: TextStyle(
+                    fontSize: FONT_SIZE_MID,
+                    color: GREY,
+                  ),
+                ),
               ),
-            ),
+              Text("Log in",
+                  style: TextStyle(
+                    color: MAIN_PINK,
+                  )
+              )
+            ],
           ),
-          Text("Log in",
-              style: TextStyle(
-                color: MAIN_PINK,
-              )),
           SizedBox(height: 45),
           RoundedButton(SIGN_UP_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE),
           SizedBox(height: 20),
-          RoundedButton(SIGN_UP_WGOOGLE_ITALIAN, () {}, GRAY, WHITE),
+          RoundedButton(SIGN_UP_WGOOGLE_ITALIAN, () {}, WHITE, MAIN_BLACK),
         ],
       ),
     );
