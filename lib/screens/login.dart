@@ -14,49 +14,56 @@ class LoginPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Image.asset('assets/icon1x.png'),
-          SizedBox(height: 10),
-          Center(
-            child: Text(
-              APPLICATION_NAME,
-              style: TextStyle(
-                fontSize: FONT_SIZE_HUGE,
-                fontWeight: FontWeight.bold,
-                color: WHITE,
-              ),
-            ),
-          ),
-          SizedBox(height: 10),
-          Center(
+          Container(
+            margin: EdgeInsets.all(10),
+            child: Center(
               child: Text(
-            DESCRIPTION_LOGIN_PAGE,
-            style: TextStyle(
-              fontSize: FONT_SIZE_BIG,
-              color: GREY,
-            ),
-          )),
-          SizedBox(height: 45),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Center(
-                child: Text(
-                  ALREADY_ACCOUNT_ITALIAN,
-                  style: TextStyle(
-                    fontSize: FONT_SIZE_MID,
-                    color: GREY,
-                  ),
+                APPLICATION_NAME,
+                style: TextStyle(
+                  fontSize: FONT_SIZE_HUGE,
+                  fontWeight: FontWeight.bold,
+                  color: WHITE,
                 ),
               ),
-              Text(LOGIN,
-                  style: TextStyle(
-                    color: MAIN_PINK,
-                  )
-              )
-            ],
+            ),
           ),
-          SizedBox(height: 45),
-          RoundedButton(SIGN_UP_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE),
-          SizedBox(height: 20),
+          Container(
+            margin: EdgeInsets.all(10),
+            child: Center(
+                child: Text(
+              DESCRIPTION_LOGIN_PAGE,
+              style: TextStyle(
+                fontSize: FONT_SIZE_BIG,
+                color: GREY,
+              ),
+            )),
+          ),
+          Container(
+            margin: EdgeInsets.all(25),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Center(
+                  child: Text(
+                    ALREADY_ACCOUNT_ITALIAN,
+                    style: TextStyle(
+                      fontSize: FONT_SIZE_MID,
+                      color: GREY,
+                    ),
+                  ),
+                ),
+                Text(LOGIN,
+                    style: TextStyle(
+                      color: MAIN_PINK,
+                    )
+                )
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 25, bottom: 15),
+            child: RoundedButton(SIGN_UP_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE)
+          ),
           RoundedButton(SIGN_UP_WGOOGLE_ITALIAN, () {}, WHITE, MAIN_BLACK),
         ],
       ),
