@@ -4,13 +4,17 @@ import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/circles_in_login_page.dart';
+
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+        body: CustomPaint(
+      painter: Circle(),
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Image.asset(IMAGE_PIG_HD_2_PATH),
@@ -31,18 +35,17 @@ class LoginPage extends StatelessWidget {
                 Text(LOGIN,
                     style: TextStyle(
                       color: MAIN_PINK,
-                    )
-                )
+                    ))
               ],
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 15, bottom: 15),
-            child: RoundedButton(SIGN_UP_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE)
-          ),
+              margin: EdgeInsets.only(top: 15, bottom: 15),
+              child:
+                  RoundedButton(SIGN_UP_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE)),
           RoundedButton(SIGN_UP_WGOOGLE_ITALIAN, () {}, WHITE, MAIN_BLACK),
         ],
       ),
-    );
+    ));
   }
 }

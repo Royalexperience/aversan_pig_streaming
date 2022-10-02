@@ -10,3 +10,5 @@ const Color WHITE = Color.fromARGB(255, 255, 255, 255);
 const Color GREY = Color.fromARGB(166, 217, 217, 217);
 // ignore: constant_identifier_names
 const Color MAIN_BLACK = Color.fromARGB(255, 0, 0, 0);
+// ignore: constant_identifier_names
+const Color PINK_FOR_CIRCLES = Color.fromARGB(132, 244, 113, 126);
