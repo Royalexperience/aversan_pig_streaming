@@ -17,7 +17,7 @@ class LoginPage extends StatelessWidget {
           SizedBox(height: 10),
           Center(
             child: Text(
-              "Aversan Pig Streaming",
+              APPLICATION_NAME,
               style: TextStyle(
                 fontSize: FONT_SIZE_HUGE,
                 fontWeight: FontWeight.bold,
@@ -28,7 +28,7 @@ class LoginPage extends StatelessWidget {
           SizedBox(height: 10),
           Center(
               child: Text(
-            "Streaming like a pig",
+            DESCRIPTION_LOGIN_PAGE,
             style: TextStyle(
               fontSize: FONT_SIZE_BIG,
               color: GREY,
@@ -40,14 +40,14 @@ class LoginPage extends StatelessWidget {
             children: <Widget>[
               Center(
                 child: Text(
-                  "Hai già un account? ",
+                  ALREADY_ACCOUNT_ITALIAN,
                   style: TextStyle(
                     fontSize: FONT_SIZE_MID,
                     color: GREY,
                   ),
                 ),
               ),
-              Text("Log in",
+              Text(LOGIN,
                   style: TextStyle(
                     color: MAIN_PINK,
                   )
