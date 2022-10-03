@@ -44,7 +44,7 @@ class LoginPage extends StatelessWidget {
               margin: EdgeInsets.only(top: 15, bottom: 15),
               child:
                   RoundedButton(SIGN_UP_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE)),
-          RoundendButtonWithIcon(SIGN_UP_WGOOGLE_ITALIAN, () {}, WHITE, MAIN_BLACK,GoogleIcons.google),
+          RoundendButtonWithIcon(SIGN_UP_WGOOGLE_ITALIAN, () {}, WHITE, MAIN_BLACK,GoogleIcons.google,MAIN_BLACK),
         ],
       ),
     ));
