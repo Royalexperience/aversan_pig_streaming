@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
+import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
 import 'package:flutter/material.dart';
 
 class RoundedButton extends StatelessWidget {
@@ -49,7 +50,7 @@ class RoundendButtonWithIcon extends RoundedButton {
         width: yourWidth,
         height: 50,
         child: ElevatedButton.icon(
-          icon: Icon(iconData),
+          icon: Icon(iconData,color: MAIN_BLACK),
           style: ElevatedButton.styleFrom(
               backgroundColor: color,
               shape: RoundedRectangleBorder(
