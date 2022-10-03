@@ -53,3 +53,6 @@ flutter:
         - asset: assets/fonts/coolvetica_crammed_rg.otf
         - asset: assets/fonts/coolvetica_rg_it.otf
         - asset: assets/fonts/coolvetica_rg.otf
+    - family: GoogleIcons
+      fonts:
+        - asset: assets/fonts/GoogleIcons.ttf
