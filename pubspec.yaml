@@ -18,27 +18,43 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  lints: ^2.0.0
 
 #########################################
 flutter_native_splash:
   color: "#995C76" 
   color_dark: "#2B2725"
-  image: assets/pig.png
+  image: assets/images/pig.png
 #########################################
 
 #########################################
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: assets/launcher_icon.png
-  adaptive_icon_foreground: assets/launcher_icon.png
+  image_path: assets/images/launcher_icon.png
+  adaptive_icon_foreground: assets/images/launcher_icon.png
   adaptive_icon_background: "#2B2725"
   background_color: "#2B2725"
   min_sdk_android: 21 # android min sdk min:16, default 21
 #########################################
 
 
-
+#########################################
 flutter:
 
   uses-material-design: true
+  assets:
+    - assets/images/pig_Hd_video_white.png
+    - assets/images/pig.png
+  fonts:
+    - family: Coolvetica
+      fonts:
+        - asset: assets/fonts/coolvetica_compressed_hv.otf
+        - asset: assets/fonts/coolvetica_condensed_rg.otf
+        - asset: assets/fonts/coolvetica_crammed_rg.otf
+        - asset: assets/fonts/coolvetica_rg_it.otf
+        - asset: assets/fonts/coolvetica_rg.otf
+    - family: GoogleIcons
+      fonts:
+        - asset: assets/fonts/GoogleIcons.ttf
+#########################################
