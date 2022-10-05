@@ -13,6 +13,13 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: WHITE, //change your color here
+        ),
+      ),
       body: CustomPaint(
         painter: Circle(),
         child: Center(
