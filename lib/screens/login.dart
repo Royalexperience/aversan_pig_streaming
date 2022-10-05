@@ -1,6 +1,7 @@
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
 import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
+import 'package:aversan_pig_streaming/screens/sign_in.dart';
 import 'package:aversan_pig_streaming/screens/sign_up.dart';
 import 'package:aversan_pig_streaming/widgets/google_icons_icons.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
@@ -34,10 +35,18 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(LOGIN,
-                    style: TextStyle(
-                      color: MAIN_PINK,
-                    ))
+                InkWell(
+                  child: Text(
+                    LOGIN,
+                    style: TextStyle(fontSize: FONT_SIZE_MID, color: MAIN_PINK),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const SignInPage()),
+                    );
+                  },
+                )
               ],
             ),
           ),
