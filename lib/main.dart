@@ -23,6 +23,8 @@ ThemeData _darkTheme() {
   return ThemeData(
     scaffoldBackgroundColor: DARK_BACKGROUND_COLOR,
     fontFamily: 'Coolvetica',
+    scrollbarTheme: ScrollbarThemeData(
+      thumbColor: MaterialStateProperty.all(MAIN_PINK)),
     /*
     textTheme: const TextTheme(
       headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
