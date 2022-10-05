@@ -18,6 +18,7 @@ const String EMAIL = "email";
 const String USERNAME = "username";
 // ignore: constant_identifier_names
 const String PASSWORD = "password";
+
 // ignore: constant_identifier_names
 const String CONFIRM_PASSWORD_ITALIAN = "conferma password";
 // ignore: constant_identifier_names
