@@ -18,30 +18,42 @@ class SignUpPage extends StatelessWidget {
         child: Center(
           child: SingleChildScrollView(
             child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(IMAGE_PIG_HD_2_PATH),
-            CustomTextField(EMAIL, GREY, MAIN_PINK, 2),
-            CustomTextField(USERNAME, GREY, MAIN_PINK, 2),
-            CustomTextField(PASSWORD, GREY, MAIN_PINK, 2, obscureTextFlag: true,),
-            CustomTextField(CONFIRM_PASSWORD_ITALIAN, GREY, MAIN_PINK, 2, obscureTextFlag: true,),
-            Container(
-              margin: EdgeInsets.only(top: 15),
-              child:
-                  RoundedButton(SIGN_UP_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 35),
-              child: InkWell(
-                child: Text(
-                  ALREADY_ACCOUNT_ITALIAN,
-                  style: TextStyle(fontSize: FONT_SIZE_MID, color: WHITE),
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(IMAGE_PIG_HD_2_PATH),
+                CustomTextField(EMAIL, GREY, MAIN_PINK, 2),
+                CustomTextField(USERNAME, GREY, MAIN_PINK, 2),
+                CustomTextField(
+                  PASSWORD,
+                  GREY,
+                  MAIN_PINK,
+                  2,
+                  obscureTextFlag: true,
                 ),
-                onTap: () {},
-              ),
-            )
-          ],
-        ),
+                CustomTextField(
+                  CONFIRM_PASSWORD_ITALIAN,
+                  GREY,
+                  MAIN_PINK,
+                  2,
+                  obscureTextFlag: true,
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 15),
+                  child: RoundedButton(
+                      SIGN_UP_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 35, bottom: 35),
+                  child: InkWell(
+                    child: Text(
+                      ALREADY_ACCOUNT_ITALIAN,
+                      style: TextStyle(fontSize: FONT_SIZE_MID, color: WHITE),
+                    ),
+                    onTap: () {},
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
