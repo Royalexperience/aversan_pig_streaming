@@ -1,5 +1,5 @@
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
-import 'package:aversan_pig_streaming/screens/sign_in.dart';
+import 'package:aversan_pig_streaming/constants/themes/helping_functions.dart';
 import 'package:aversan_pig_streaming/widgets/circles_in_login_page.dart';
 import 'package:aversan_pig_streaming/widgets/custom_text_field.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
@@ -14,62 +14,50 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        iconTheme: IconThemeData(
-          color: WHITE, //change your color here
-        ),
-      ),
-      body: CustomPaint(
-        painter: Circle(),
-        child: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(IMAGE_PIG_HD_2_PATH),
-                CustomTextFieldWithIcon(
-                    EMAIL, GREY, MAIN_PINK, 2, Icons.email, MAIN_BLACK),
-                CustomTextFieldWithIcon(USERNAME, GREY, MAIN_PINK, 2,
-                    Icons.account_circle, MAIN_BLACK),
-                CustomTextFieldWithIcon(
+      resizeToAvoidBottomInset: false,
+      body: SafeArea(
+        child: CustomPaint(
+          painter: Circle(),
+          child: Center(
+              child: ListView(
+                scrollDirection: Axis.vertical,
+                children: [
+                  Image.asset(IMAGE_PIG_HD_2_PATH),
+                  CustomTextField(EMAIL, GREY, MAIN_PINK, 2),
+                  CustomTextField(USERNAME, GREY, MAIN_PINK, 2),
+                  CustomTextField(
                     PASSWORD,
                     GREY,
                     MAIN_PINK,
                     2,
                     obscureTextFlag: true,
-                    Icons.lock_outlined,
-                    MAIN_BLACK),
-                CustomTextFieldWithIcon(
+                  ),
+                  CustomTextField(
                     CONFIRM_PASSWORD_ITALIAN,
                     GREY,
                     MAIN_PINK,
                     2,
                     obscureTextFlag: true,
-                    Icons.lock,
-                    MAIN_BLACK),
-                Container(
-                  margin: EdgeInsets.only(top: 15),
-                  child: RoundedButton(
-                      SIGN_UP_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 35, bottom: 35),
-                  child: InkWell(
-                    child: Text(
-                      ALREADY_ACCOUNT_ITALIAN,
-                      style: TextStyle(fontSize: FONT_SIZE_MID, color: WHITE),
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const SignInPage()),
-                      );
-                    },
                   ),
-                )
-              ],
+                  Container(
+                    margin: EdgeInsets.only(top: 15),
+                    child: RoundedButton(
+                        SIGN_UP_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 35, bottom: 35),
+                    child: InkWell(
+                      child: Text(
+                        ALREADY_ACCOUNT_ITALIAN,
+                        style: TextStyle(fontSize: FONT_SIZE_MID, color: WHITE),
+                      ),
+                      onTap: () {},
+                    ),
+                  ),
+                  Padding(
+                  padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).viewInsets.bottom)),
+                ],
             ),
           ),
         ),
