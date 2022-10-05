@@ -35,3 +35,37 @@ class CustomTextField extends StatelessWidget {
     );
   }
 }
+
+class CustomTextFieldWithIcon extends CustomTextField {
+  final IconData iconData;
+  final Color iconColor;
+
+  const CustomTextFieldWithIcon(String helperText, Color helperTextColor, Color focusBorderColor, double focusBorderWidth,
+  this.iconData, this.iconColor, {super.key, super.obscureTextFlag})
+  : super(helperText, helperTextColor, focusBorderColor, focusBorderWidth);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: screenWidthPercentage(context, percentage: 0.85),
+      height: screenHeightPercentage(context,percentage: 0.08),
+      child: Padding(
+        padding: EdgeInsets.all(screenHeightPercentage(context,percentage: 0.01)),
+        child: TextField(
+            decoration: InputDecoration(
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(width: focusBorderWidth, color: focusBorderColor),
+              ),
+              hintText: helperText,
+              filled: true,
+              fillColor: WHITE,
+              hintStyle: TextStyle(color: helperTextColor),
+              suffixIcon: Icon(iconData, color: iconColor,),
+            ),
+            obscureText: obscureTextFlag,
+            enableSuggestions: false,
+            autocorrect: false,
+          ),)
+    );
+  }
+}

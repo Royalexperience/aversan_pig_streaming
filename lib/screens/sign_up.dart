@@ -28,22 +28,26 @@ class SignUpPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(IMAGE_PIG_HD_2_PATH),
-                CustomTextField(EMAIL, GREY, MAIN_PINK, 2),
-                CustomTextField(USERNAME, GREY, MAIN_PINK, 2),
-                CustomTextField(
-                  PASSWORD,
-                  GREY,
-                  MAIN_PINK,
-                  2,
-                  obscureTextFlag: true,
-                ),
-                CustomTextField(
-                  CONFIRM_PASSWORD_ITALIAN,
-                  GREY,
-                  MAIN_PINK,
-                  2,
-                  obscureTextFlag: true,
-                ),
+                CustomTextFieldWithIcon(
+                    EMAIL, GREY, MAIN_PINK, 2, Icons.email, MAIN_BLACK),
+                CustomTextFieldWithIcon(USERNAME, GREY, MAIN_PINK, 2,
+                    Icons.account_circle, MAIN_BLACK),
+                CustomTextFieldWithIcon(
+                    PASSWORD,
+                    GREY,
+                    MAIN_PINK,
+                    2,
+                    obscureTextFlag: true,
+                    Icons.lock_outlined,
+                    MAIN_BLACK),
+                CustomTextFieldWithIcon(
+                    CONFIRM_PASSWORD_ITALIAN,
+                    GREY,
+                    MAIN_PINK,
+                    2,
+                    obscureTextFlag: true,
+                    Icons.lock,
+                    MAIN_BLACK),
                 Container(
                   margin: EdgeInsets.only(top: 15),
                   child: RoundedButton(
