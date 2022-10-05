@@ -15,9 +15,9 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: screenWidthPercentage(context, percentage: 0.85),
-      height: 60,
+      height: screenHeightPercentage(context,percentage: 0.08),
       child: Padding(
-        padding: EdgeInsets.all(9),
+        padding: EdgeInsets.all(screenHeightPercentage(context,percentage: 0.01)),
         child: TextField(
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
