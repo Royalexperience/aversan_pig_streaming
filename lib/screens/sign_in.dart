@@ -14,6 +14,8 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -71,9 +73,12 @@ class SignInPage extends StatelessWidget {
                         ),
                         onTap: () {},
                       ),
-                    )
+                    ),
                   ],
-                )
+                ),
+              Padding(
+                    padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).viewInsets.bottom))
               ],
             ),
           ),

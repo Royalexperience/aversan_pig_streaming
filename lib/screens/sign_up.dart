@@ -15,14 +15,21 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: WHITE, //change your color here
+        ),
+      ),
       resizeToAvoidBottomInset: false,
-      body: SafeArea(
-        child: CustomPaint(
+      body: CustomPaint(
           painter: Circle(),
           child: Center(
             child: ListView(
-              padding: EdgeInsets.all(
-                  screenWidthPercentage(context, percentage: 0.1)),
+              padding: EdgeInsets.only(
+                  left : screenWidthPercentage(context, percentage: 0.1), right: screenWidthPercentage(context, percentage: 0.1),top: screenHeightPercentage(context, percentage: 0.12), ),
               scrollDirection: Axis.vertical,
               children: [
                 Image.asset(IMAGE_PIG_HD_2_PATH),
@@ -75,7 +82,6 @@ class SignUpPage extends StatelessWidget {
               ],
             ),
           ),
-        ),
       ),
     );
   }
