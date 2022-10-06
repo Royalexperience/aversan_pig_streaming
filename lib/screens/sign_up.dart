@@ -20,27 +20,45 @@ class SignUpPage extends StatelessWidget {
         child: CustomPaint(
           painter: Circle(),
           child: Center(
-              child: ListView(
-                scrollDirection: Axis.vertical,
-                children: [
-                  Image.asset(IMAGE_PIG_HD_2_PATH),
-                  CustomTextFieldWithIcon(EMAIL, GREY, MAIN_PINK, 2, Icons.email, MAIN_BLACK),
-                  CustomTextFieldWithIcon(USERNAME, GREY, MAIN_PINK, 2, Icons.account_circle,MAIN_BLACK),
-                  CustomTextFieldWithIcon(PASSWORD,GREY,MAIN_PINK,2,obscureTextFlag: true,Icons.lock_outlined,MAIN_BLACK),
-                  CustomTextFieldWithIcon(CONFIRM_PASSWORD_ITALIAN,GREY,MAIN_PINK,2,obscureTextFlag: true,Icons.lock,MAIN_BLACK),
-                  Container(
-                    margin: EdgeInsets.only(top: 15),
-                    child: RoundedButton(
-                        SIGN_UP_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 35, bottom: 35),
-                    child: InkWell(
-                      child: Text(
-                        ALREADY_ACCOUNT_ITALIAN,
-                        style: TextStyle(fontSize: FONT_SIZE_MID, color: WHITE),
-                      ),
-                      onTap: () {},
+            child: ListView(
+              padding: EdgeInsets.all(
+                  screenWidthPercentage(context, percentage: 0.1)),
+              scrollDirection: Axis.vertical,
+              children: [
+                Image.asset(IMAGE_PIG_HD_2_PATH),
+                CustomTextFieldWithIcon(
+                    EMAIL, GREY, MAIN_PINK, 2, Icons.email, MAIN_BLACK),
+                CustomTextFieldWithIcon(USERNAME, GREY, MAIN_PINK, 2,
+                    Icons.account_circle, MAIN_BLACK),
+                CustomTextFieldWithIcon(
+                    PASSWORD,
+                    GREY,
+                    MAIN_PINK,
+                    2,
+                    obscureTextFlag: true,
+                    Icons.lock_outlined,
+                    MAIN_BLACK),
+                CustomTextFieldWithIcon(
+                    CONFIRM_PASSWORD_ITALIAN,
+                    GREY,
+                    MAIN_PINK,
+                    2,
+                    obscureTextFlag: true,
+                    Icons.lock,
+                    MAIN_BLACK),
+                Container(
+                  margin: EdgeInsets.only(
+                      top: screenHeightPercentage(context, percentage: 0.015)),
+                  child: RoundedButton(
+                      SIGN_UP_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: screenHeightPercentage(context,percentage: 0.04)),
+                  alignment: Alignment.center,
+                  child: InkWell(
+                    child: Text(
+                      ALREADY_ACCOUNT_ITALIAN,
+                      style: TextStyle(fontSize: FONT_SIZE_MID, color: WHITE),
                     ),
                     onTap: () {
                       Navigator.push(
