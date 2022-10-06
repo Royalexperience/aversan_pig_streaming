@@ -1,4 +1,6 @@
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
+import 'package:aversan_pig_streaming/constants/themes/helping_functions.dart';
+import 'package:aversan_pig_streaming/screens/sign_in.dart';
 import 'package:aversan_pig_streaming/widgets/circles_in_login_page.dart';
 import 'package:aversan_pig_streaming/widgets/custom_text_field.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
@@ -40,11 +42,19 @@ class SignUpPage extends StatelessWidget {
                       ),
                       onTap: () {},
                     ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignInPage()),
+                      );
+                    },
                   ),
-                  Padding(
-                  padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).viewInsets.bottom)),
-                ],
+                ),
+                Padding(
+                    padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).viewInsets.bottom)),
+              ],
             ),
           ),
         ),
