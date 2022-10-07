@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-
-import '../constants/strings.dart';
 import '../constants/themes/dark_color_scheme.dart';
 import '../constants/themes/helping_functions.dart';
 
 class ImagePickerButton extends StatelessWidget {
-  const ImagePickerButton({super.key});
+  final String imagePath;
+  final Widget customWidget;
+  const ImagePickerButton(this.imagePath, this.customWidget, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +28,11 @@ class ImagePickerButton extends StatelessWidget {
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 borderOnForeground: true,
                 child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => customWidget));
+                    },
                     child: Image.asset(
-                      DEFAULT_PROFILE_IMAGE,
+                      imagePath,
                     )),
               ),
             ),

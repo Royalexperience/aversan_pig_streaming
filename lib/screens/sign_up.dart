@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import '../constants/strings.dart';
 import '../constants/themes/dark_color_scheme.dart';
 import '../widgets/image_picker_button.dart';
+import 'image_pick_screen.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -36,7 +37,7 @@ class SignUpPage extends StatelessWidget {
             ),
             scrollDirection: Axis.vertical,
             children: [
-              ImagePickerButton(),
+              ImagePickerButton(DEFAULT_PROFILE_IMAGE, ImagePickScreen()),
               CustomTextFieldWithIcon(
                   EMAIL, GREY, MAIN_PINK, 2, EMAIL_ICON, MAIN_BLACK),
               CustomTextFieldWithIcon(USERNAME, GREY, MAIN_PINK, 2,
