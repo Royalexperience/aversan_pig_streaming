@@ -46,6 +46,7 @@ flutter:
   assets:
     - assets/images/pig_Hd_video_white.png
     - assets/images/pig.png
+    - assets/images/profile_image.png
   fonts:
     - family: Coolvetica
       fonts:

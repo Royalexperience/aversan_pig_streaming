@@ -31,3 +31,9 @@ const String CONFIRM_PASSWORD_ITALIAN = "Conferma password";
 const String IMAGE_PIG_HD_2_PATH = 'assets/images/pig_Hd_video_white.png';
 // ignore: constant_identifier_names
 const String IMAGE_PIG_LAUNCHER_ICON_PATH = 'assets/images/pig.png';
+// ignore: constant_identifier_names
+const String DEFAULT_PROFILE_IMAGE = 'assets/images/profile_image.png';
+// ignore: constant_identifier_names
+const defaultImages = {
+  'image01': 'assets/images/profile_image.png',
+};
