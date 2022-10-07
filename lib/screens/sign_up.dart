@@ -38,16 +38,16 @@ class SignUpPage extends StatelessWidget {
             children: [
               ImagePickerButton(),
               CustomTextFieldWithIcon(
-                  EMAIL, GREY, MAIN_PINK, 2, Icons.email, MAIN_BLACK),
+                  EMAIL, GREY, MAIN_PINK, 2, EMAIL_ICON, MAIN_BLACK),
               CustomTextFieldWithIcon(USERNAME, GREY, MAIN_PINK, 2,
-                  Icons.account_circle, MAIN_BLACK),
+                  ACCOUNT_CIRCLE_ICON, MAIN_BLACK),
               CustomTextFieldWithIcon(
                   PASSWORD,
                   GREY,
                   MAIN_PINK,
                   2,
                   obscureTextFlag: true,
-                  Icons.lock_outlined,
+                  LOCK_OUTLINED_ICON,
                   MAIN_BLACK),
               CustomTextFieldWithIcon(
                   CONFIRM_PASSWORD_ITALIAN,
@@ -55,7 +55,7 @@ class SignUpPage extends StatelessWidget {
                   MAIN_PINK,
                   2,
                   obscureTextFlag: true,
-                  Icons.lock,
+                  LOCK_ICON,
                   MAIN_BLACK),
               Container(
                 margin: EdgeInsets.only(

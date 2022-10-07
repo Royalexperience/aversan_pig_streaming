@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/*=====================================================
+                      COLORS
+======================================================*/
 // ignore: constant_identifier_names
 const Color DARK_BACKGROUND_COLOR = Color.fromARGB(148, 43, 39, 37);
 // ignore: constant_identifier_names
@@ -15,5 +18,16 @@ const Color MAIN_BLACK = Color.fromARGB(255, 0, 0, 0);
 // ignore: constant_identifier_names
 const Color PINK_FOR_CIRCLES = Color.fromARGB(132, 244, 113, 126);
 
+/*=====================================================
+                      ICONS
+======================================================*/
 // ignore: constant_identifier_names
 const IconData PENCIL_ICON = Icons.mode;
+// ignore: constant_identifier_names
+const IconData EMAIL_ICON = Icons.email;
+// ignore: constant_identifier_names
+const IconData ACCOUNT_CIRCLE_ICON = Icons.account_circle;
+// ignore: constant_identifier_names
+const IconData LOCK_OUTLINED_ICON = Icons.lock_outlined;
+// ignore: constant_identifier_names
+const IconData LOCK_ICON = Icons.lock;
