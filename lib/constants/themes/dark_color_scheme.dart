@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 // ignore: constant_identifier_names
 const Color DARK_BACKGROUND_COLOR = Color.fromARGB(148, 43, 39, 37);
 // ignore: constant_identifier_names
+const Color DARK_BACKGROUND_COLOR_FULL = Color.fromARGB(255, 43, 39, 37);
+// ignore: constant_identifier_names
 const Color MAIN_PINK = Color.fromARGB(255, 244, 113, 126);
 // ignore: constant_identifier_names
 const Color WHITE = Color.fromARGB(255, 255, 255, 255);
