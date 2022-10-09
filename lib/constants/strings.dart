@@ -32,6 +32,27 @@ const String IMAGE_PIG_HD_2_PATH = 'assets/images/pig_Hd_video_white.png';
 // ignore: constant_identifier_names
 const String IMAGE_PIG_LAUNCHER_ICON_PATH = 'assets/images/pig.png';
 // ignore: constant_identifier_names
-const String DEFAULT_PROFILE_IMAGE = 'assets/images/profile_image.png';
-// ignore: constant_identifier_names
 const String PICK_AN_IMAGE_ITALIAN = "Scegli un'immagine";
+
+// ignore: constant_identifier_names
+const String AVATAR_PATH = "assets/images/avatar_";
+// ignore: constant_identifier_names
+const String AVATAR_DEFAULT_IMAGE = 'Default';
+// ignore: constant_identifier_names
+const String AVATAR_NAME_SUSANNE = "Susanne";
+// ignore: constant_identifier_names
+const String AVATAR_NAME_LAURA = "Laura";
+// ignore: constant_identifier_names
+const String AVATAR_NAME_MARIA = "Maria";
+// ignore: constant_identifier_names
+const String AVATAR_NAME_ROBERTA = "Roberta";
+// ignore: constant_identifier_names
+const String AVATAR_NAME_CASSANDRA = "Cassandra";
+// ignore: constant_identifier_names
+const String AVATAR_NAME_JOE = "Joe";
+// ignore: constant_identifier_names
+const String AVATAR_NAME_JACK = "Jack";
+// ignore: constant_identifier_names
+const String AVATAR_NAME_MARIO = "Mario";
+// ignore: constant_identifier_names
+const String AVATAR_NAME_GENNY = "Cassandra";

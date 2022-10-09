@@ -1,3 +1,4 @@
+import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/screens/login.dart';
 import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: APPLICATION_NAME,
+      debugShowCheckedModeBanner: false,
       theme: _darkTheme(),
       home: LoginPage(),
     );

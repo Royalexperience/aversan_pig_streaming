@@ -46,7 +46,17 @@ flutter:
   assets:
     - assets/images/pig_Hd_video_white.png
     - assets/images/pig.png
-    - assets/images/profile_image.png
+    - assets/images/avatar_default.png
+    - assets/images/avatar_susanne.png
+    - assets/images/avatar_laura.png
+    - assets/images/avatar_maria.png
+    - assets/images/avatar_roberta.png
+    - assets/images/avatar_cassandra.png
+    - assets/images/avatar_joe.png
+    - assets/images/avatar_jack.png
+    - assets/images/avatar_mario.png
+    - assets/images/avatar_genny.png
+
   fonts:
     - family: Coolvetica
       fonts:
