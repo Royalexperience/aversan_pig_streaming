@@ -17,6 +17,8 @@ const Color DARK_GREY = Color.fromARGB(255, 129, 126, 126);
 const Color MAIN_BLACK = Color.fromARGB(255, 0, 0, 0);
 // ignore: constant_identifier_names
 const Color PINK_FOR_CIRCLES = Color.fromARGB(132, 244, 113, 126);
+// ignore: constant_identifier_names
+const Color COLOR_TRANSPARENT = Colors.transparent;
 
 /*=====================================================
                       ICONS
