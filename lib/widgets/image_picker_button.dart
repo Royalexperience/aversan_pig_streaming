@@ -1,12 +1,18 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import '../constants/themes/dark_color_scheme.dart';
 import '../constants/themes/helping_functions.dart';
 
-class ImagePickerButton extends StatelessWidget {
+class ImagePickerButton extends StatefulWidget {
   final String imagePath;
-  final Widget customWidget;
-  const ImagePickerButton(this.imagePath, this.customWidget, {super.key});
-
+  final Widget nextScreen;
+  const ImagePickerButton(this.imagePath, this.nextScreen, {super.key});
+  
+  @override
+  State<StatefulWidget> createState() => _ImagePickerButtoState();
+}
+class _ImagePickerButtoState extends State<ImagePickerButton> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -28,11 +34,11 @@ class ImagePickerButton extends StatelessWidget {
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 borderOnForeground: true,
                 child: InkWell(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => customWidget));
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => widget.nextScreen));
                     },
                     child: Image.asset(
-                      imagePath,
+                      widget.imagePath,
                     )),
               ),
             ),
