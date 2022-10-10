@@ -55,4 +55,4 @@ const String AVATAR_NAME_JACK = "Jack";
 // ignore: constant_identifier_names
 const String AVATAR_NAME_MARIO = "Mario";
 // ignore: constant_identifier_names
-const String AVATAR_NAME_GENNY = "Cassandra";
+const String AVATAR_NAME_GENNY = "Genny";

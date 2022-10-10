@@ -1,17 +1,22 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 import '../constants/themes/dark_color_scheme.dart';
 import '../constants/themes/helping_functions.dart';
+import '../utils/utils.dart';
 
+// ignore: must_be_immutable
 class ImagePickerButton extends StatefulWidget {
-  final String imagePath;
+  late String imagePath;
   final Widget nextScreen;
-  const ImagePickerButton(this.imagePath, this.nextScreen, {super.key});
+  ImagePickerButton(this.imagePath, this.nextScreen, {super.key});
   
   @override
   State<StatefulWidget> createState() => _ImagePickerButtoState();
+
+  void setImagePath(String path) {
+    imagePath = path;
+  }
 }
+
 class _ImagePickerButtoState extends State<ImagePickerButton> {
   @override
   Widget build(BuildContext context) {
@@ -24,7 +29,7 @@ class _ImagePickerButtoState extends State<ImagePickerButton> {
               height: screenWidthPercentage(context, percentage: 0.6),
               margin: EdgeInsets.all(screenWidthPercentage(context, percentage: 0.05)),
               decoration: BoxDecoration(
-                color: Colors.transparent,
+                color: COLOR_TRANSPARENT,
                 border: Border.all(color: MAIN_PINK, width: 3),
                 shape: BoxShape.circle,
               ),
@@ -34,8 +39,11 @@ class _ImagePickerButtoState extends State<ImagePickerButton> {
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 borderOnForeground: true,
                 child: InkWell(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => widget.nextScreen));
+                    onTap: () async {
+                      var indexImage = await Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => widget.nextScreen));
+                      widget.setImagePath(Utils.getUserAvatarList()[indexImage].avatarImagePath);
+                      setState(() {});
                     },
                     child: Image.asset(
                       widget.imagePath,
