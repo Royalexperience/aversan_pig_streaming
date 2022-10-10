@@ -1,7 +1,6 @@
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
 import 'package:aversan_pig_streaming/constants/themes/helping_functions.dart';
 import 'package:aversan_pig_streaming/screens/sign_in.dart';
-import 'package:aversan_pig_streaming/utils/utils.dart';
 import 'package:aversan_pig_streaming/widgets/circles_in_login_page.dart';
 import 'package:aversan_pig_streaming/widgets/custom_text_field.dart';
 import 'package:aversan_pig_streaming/widgets/main_app_bar.dart';
@@ -33,7 +32,7 @@ class SignUpPage extends StatelessWidget {
             ),
             scrollDirection: Axis.vertical,
             children: [
-              ImagePickerButton(Utils.getUserAvatarList()[0].avatarImagePath, ImagePickScreen()),
+              ImagePickerButton(ImagePickScreen()),
               CustomTextFieldWithIcon(
                   EMAIL, GREY, MAIN_PINK, 2, EMAIL_ICON, MAIN_BLACK),
               CustomTextFieldWithIcon(USERNAME, GREY, MAIN_PINK, 2,

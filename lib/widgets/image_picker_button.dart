@@ -3,18 +3,13 @@ import '../constants/themes/dark_color_scheme.dart';
 import '../constants/themes/helping_functions.dart';
 import '../utils/utils.dart';
 
-// ignore: must_be_immutable
 class ImagePickerButton extends StatefulWidget {
-  late String imagePath;
+  static String imagePath = Utils.getUserAvatarList()[0].avatarImagePath;
   final Widget nextScreen;
-  ImagePickerButton(this.imagePath, this.nextScreen, {super.key});
+  const ImagePickerButton( this.nextScreen, {super.key});
   
   @override
   State<StatefulWidget> createState() => _ImagePickerButtoState();
-
-  void setImagePath(String path) {
-    imagePath = path;
-  }
 }
 
 class _ImagePickerButtoState extends State<ImagePickerButton> {
@@ -42,11 +37,11 @@ class _ImagePickerButtoState extends State<ImagePickerButton> {
                     onTap: () async {
                       var indexImage = await Navigator.push(context,
                       MaterialPageRoute(builder: (context) => widget.nextScreen));
-                      widget.setImagePath(Utils.getUserAvatarList()[indexImage].avatarImagePath);
+                      ImagePickerButton.imagePath = Utils.getUserAvatarList()[indexImage].avatarImagePath;
                       setState(() {});
                     },
                     child: Image.asset(
-                      widget.imagePath,
+                      ImagePickerButton.imagePath,
                     )),
               ),
             ),
