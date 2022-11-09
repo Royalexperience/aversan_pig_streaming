@@ -43,8 +43,8 @@ class _ImagePickScreenState extends State<ImagePickScreen> {
                       child: Container(
                         margin: EdgeInsets.all(screenWidthPercentage(context, percentage: 0.001)),
                         child: Column(children: [
-                          Image.asset(Utils.getUserAvatarList()[index].avatarImagePath, width: 100, height: 100,),
-                          SizedBox(height: 10),
+                          Image.asset(Utils.getUserAvatarList()[index].avatarImagePath, width: screenWidthPercentage(context, percentage: 0.30), height: screenHeightPercentage(context, percentage: 0.10),),
+                          SizedBox(height: screenHeightPercentage(context, percentage: 0.00005)),
                           Text(Utils.getUserAvatarList()[index].avatarName, style: TextStyle(color: WHITE,),)
                         ]),
                       ),
