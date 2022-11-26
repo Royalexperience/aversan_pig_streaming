@@ -6,3 +6,5 @@ const double FONT_SIZE_BIG = 18.0;
 const double FONT_SIZE_MID = 16.0;
 // ignore: constant_identifier_names
 const double FONT_SIZE_SMALL = 12.0;
+// ignore: constant_identifier_names
+const DEFAULT_MAIN_APP_BAR_HEIGHT = 60.0;

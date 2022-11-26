@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/font_sizes.dart';
+
 class MainAppBar extends StatefulWidget implements PreferredSizeWidget {
   final Color appBarBackgroundColor;
   final Color themeColor;
@@ -11,7 +13,7 @@ class MainAppBar extends StatefulWidget implements PreferredSizeWidget {
   State<MainAppBar> createState() => _MainAppBarState();
   
   @override
-  Size get preferredSize => Size.fromHeight(60);
+  Size get preferredSize => Size.fromHeight(DEFAULT_MAIN_APP_BAR_HEIGHT);
 }
 
 class _MainAppBarState extends State<MainAppBar> {
