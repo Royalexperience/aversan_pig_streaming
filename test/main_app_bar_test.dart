@@ -15,13 +15,16 @@ double appBarTop(WidgetTester tester) => tester.getTopLeft(find.byType(MainAppBa
  * The WidgetTester allows you to build and interact with widgets in the test environment.
 */
 Future<void> main() async {
-  const actualAppBarBackgroundColor = Colors.blue;
-  const actualThemeColor = Colors.red;
-  // Create the widget that has to be tested
-  Widget mainAppBarTestWidget = const MainAppBar(actualAppBarBackgroundColor, actualThemeColor, textTitle: Text("Title name"),);
+  const mockAppBarBackgroundColor = Colors.blue;
+  const mockThemeColor = Colors.red;
+  // Create the widgets that has to be tested
+  // MainAppBar with title and background
+  Widget mainAppBarTitleTestWidget = const MainAppBar(mockAppBarBackgroundColor, mockThemeColor, textTitle: Text("Title name"),);
+  // MainAppBar without title and background
+  Widget mainAppBarNoTitleTestWidget = const MainAppBar(mockAppBarBackgroundColor, mockThemeColor,);
   testWidgets('MainAppBar test #1: Find title and positioning', (tester) async {
     // Build the widget
-    await tester.pumpWidget(HelperTest.buildTestableWidget(mainAppBarTestWidget));
+    await tester.pumpWidget(HelperTest.buildTestableWidget(mainAppBarTitleTestWidget));
     // Find a widget that displays the text "Title name"
     final titleFinder = find.text("Title name");
     expect(titleFinder, findsOneWidget);
@@ -31,7 +34,7 @@ Future<void> main() async {
   });
   testWidgets('MainAppBar test #2: Scroll up and down', (tester) async {
     // Build the widget
-    await tester.pumpWidget(HelperTest.buildTestableWidget(mainAppBarTestWidget));
+    await tester.pumpWidget(HelperTest.buildTestableWidget(mainAppBarTitleTestWidget));
 
     // Inital MainAppBar height and positioning
     final double initalMainAppBarHeight = appBarHeight(tester);
@@ -54,5 +57,15 @@ Future<void> main() async {
     expect(find.text("Title name"), findsOneWidget);
     expect(appBarHeight(tester), initalMainAppBarHeight);
     expect(appBarTop(tester), initalMainAppBarTop);
+  });
+  testWidgets('MainAppBar test #3: No title and positioning', (tester) async {
+    // Build the widget
+    await tester.pumpWidget(HelperTest.buildTestableWidget(mainAppBarNoTitleTestWidget));
+    // Find a widget that displays the text "Title name"
+    final titleFinder = find.text("Title name");
+    expect(titleFinder, findsNothing);
+    // Get the top coordinate of the MainAppBar widget
+    final actualMainAppBarTop = appBarTop(tester);
+    expect(actualMainAppBarTop, 0.0);
   });
 }
