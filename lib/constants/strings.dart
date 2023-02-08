@@ -7,6 +7,8 @@ const String SIGN_UP_WGOOGLE_ITALIAN = "Registrati con Google";
 // ignore: constant_identifier_names
 const String SIGN_IN_TEXT_ITALIAN = "Accedi";
 // ignore: constant_identifier_names
+const String SEND_TEXT_ITALIAN = "Invia";
+// ignore: constant_identifier_names
 const String APPLICATION_NAME = "Aversan Pig Streaming";
 // ignore: constant_identifier_names
 const String DESCRIPTION_LOGIN_PAGE = "Streaming like a pig";
