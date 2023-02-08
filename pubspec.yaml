@@ -46,6 +46,7 @@ flutter:
   assets:
     - assets/images/pig_Hd_video_white.png
     - assets/images/pig.png
+    - assets/images/sadPigFoorgottenPassword.png
     - assets/images/avatar_default.png
     - assets/images/avatar_susanne.png
     - assets/images/avatar_laura.png

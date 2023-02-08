@@ -15,6 +15,12 @@ const String DESCRIPTION_LOGIN_PAGE = "Streaming like a pig";
 // ignore: constant_identifier_names
 const String ALREADY_ACCOUNT_ITALIAN = "Hai già un account? ";
 // ignore: constant_identifier_names
+const String PASSWORD_FORGOTTED_ITALIAN = "Hai dimenticato la password?";
+// ignore: constant_identifier_names
+const String DONT_WORRY_ITALIAN = "Non preoccuparti ci pensiamo noi!";
+// ignore: constant_identifier_names
+const String TYPE_EMAIL_ITALIAN = "Inserisci la tua email";
+// ignore: constant_identifier_names
 const String NO_ACCOUNT_ITALIAN = "Non ho un account";
 // ignore: constant_identifier_names
 const String LOGIN = "Log in";
@@ -31,6 +37,8 @@ const String FORGOT_PASSWORD_ITALIAN = "Password dimenticata";
 const String CONFIRM_PASSWORD_ITALIAN = "Conferma password";
 // ignore: constant_identifier_names
 const String IMAGE_PIG_HD_2_PATH = 'assets/images/pig_Hd_video_white.png';
+// ignore: constant_identifier_names
+const String IMAGE_SAD_PIG_PATH = 'assets/images/sadPigFoorgottenPassword.png';
 // ignore: constant_identifier_names
 const String IMAGE_PIG_LAUNCHER_ICON_PATH = 'assets/images/pig.png';
 // ignore: constant_identifier_names
