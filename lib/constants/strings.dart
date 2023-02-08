@@ -32,17 +32,26 @@ const String USERNAME = "username";
 const String PASSWORD = "password";
 // ignore: constant_identifier_names
 const String FORGOT_PASSWORD_ITALIAN = "Password dimenticata";
-
 // ignore: constant_identifier_names
 const String CONFIRM_PASSWORD_ITALIAN = "Conferma password";
+// ignore: constant_identifier_names
+const String PICK_AN_IMAGE_ITALIAN = "Scegli un'immagine";
+// ignore: constant_identifier_names
+const String SIGN_UP_OK_ITALIAN_PT1 = "Registrazione avvenuta";
+// ignore: constant_identifier_names
+const String SIGN_UP_OK_ITALIAN_PT2 = "con successo";
+// ignore: constant_identifier_names
+const String ACCOUNT_HAVE_BEEN_CREATED_ITALIAN = "Il tuo acconunt è stato creato";
+// ignore: constant_identifier_names
+const String YOUR_FIRST_ACCESS_ITALIAN = "Effettua il tuo primo accesso";
+
+
 // ignore: constant_identifier_names
 const String IMAGE_PIG_HD_2_PATH = 'assets/images/pig_Hd_video_white.png';
 // ignore: constant_identifier_names
 const String IMAGE_SAD_PIG_PATH = 'assets/images/sadPigFoorgottenPassword.png';
 // ignore: constant_identifier_names
 const String IMAGE_PIG_LAUNCHER_ICON_PATH = 'assets/images/pig.png';
-// ignore: constant_identifier_names
-const String PICK_AN_IMAGE_ITALIAN = "Scegli un'immagine";
 
 // ignore: constant_identifier_names
 const String AVATAR_PATH = "assets/images/avatar_";

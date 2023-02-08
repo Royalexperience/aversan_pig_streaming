@@ -11,7 +11,7 @@ const double FONT_SIZE_MID = 16.0;
 const double FONT_SIZE_SMALL = 12.0;
 
 double fontSizeHuge(BuildContext context) =>
-    screenHeightPercentage(context, percentage: 0.030);
+    screenHeightPercentage(context, percentage: 0.040);
 
 double fontSizeBig(BuildContext context) =>
     screenHeightPercentage(context, percentage: 0.025);
