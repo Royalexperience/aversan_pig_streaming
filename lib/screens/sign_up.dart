@@ -84,6 +84,10 @@ class SignUpFormState extends State<SignUpForm> {
   // Crea una chiave globale che identifichi in modo univoco il widget Modulo
   // e consente la validazione del form.
   final _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passController = TextEditingController();
+  final TextEditingController _confirmPassController = TextEditingController();
 
   void _validateForm() {
     // Validate restituisce true se il form è valido, false in caso contrario.
@@ -108,22 +112,22 @@ class SignUpFormState extends State<SignUpForm> {
           // Text field dell'email
           Container(
             margin: EdgeInsets.only(bottom: marginSmall(context)),
-            child: EmailTextFormFieldWithIcon(EMAIL, GREY, MAIN_PINK, 2, Icons.email, MAIN_BLACK),
+            child: EmailTextFormFieldWithIcon(EMAIL, GREY, MAIN_PINK, 2, Icons.email, MAIN_BLACK, textController: _emailController,),
           ),
           // Text field dell'username
           Container(
             margin: EdgeInsets.only(bottom: marginSmall(context)),
-            child: CustomTextFieldWithIcon(USERNAME, GREY, MAIN_PINK, 2, ACCOUNT_CIRCLE_ICON, MAIN_BLACK),
+            child: CustomTextFieldWithIcon(USERNAME, GREY, MAIN_PINK, 2, ACCOUNT_CIRCLE_ICON, MAIN_BLACK, textController: _usernameController,),
           ),
           // Text field della password
           Container(
             margin: EdgeInsets.only(bottom: marginSmall(context)),
-            child: CustomTextFieldWithIcon(PASSWORD, GREY, MAIN_PINK, 2, obscureTextFlag: true, LOCK_OUTLINED_ICON, MAIN_BLACK),
+            child: PasswordTextFormFieldWithIcon(PASSWORD, GREY, MAIN_PINK, 2, LOCK_OUTLINED_ICON, MAIN_BLACK, textController: _passController,),
           ),
           // Text field del conferma password
           Container(
             margin: EdgeInsets.only(bottom: marginSmall(context)),
-            child: CustomTextFieldWithIcon(CONFIRM_PASSWORD_ITALIAN, GREY, MAIN_PINK, 2, obscureTextFlag: true, LOCK_ICON, MAIN_BLACK),
+            child: ConfirmPasswordTextFormFieldWithIcon(CONFIRM_PASSWORD_ITALIAN, GREY, MAIN_PINK, 2, LOCK_ICON, MAIN_BLACK, passTextController:_passController, textController: _confirmPassController,),
           ),
           // Bottone di invio modulo
           Container(
