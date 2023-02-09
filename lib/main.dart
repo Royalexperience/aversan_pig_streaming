@@ -1,7 +1,6 @@
 import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/screens/login.dart';
 import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
-import 'package:aversan_pig_streaming/screens/sign_up_ok.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: APPLICATION_NAME,
       debugShowCheckedModeBanner: false,
       theme: _darkTheme(),
-      home: SignUpOk(),
+      home: LoginPage(),
     );
   }
 }
