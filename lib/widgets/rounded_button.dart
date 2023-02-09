@@ -15,7 +15,7 @@ class RoundedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         width: screenWidthPercentage(context, percentage: 0.85),
-        height: 50,
+        height: screenHeightPercentage(context, percentage: 0.06),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
               backgroundColor: color,
@@ -43,7 +43,7 @@ class RoundendButtonWithIcon extends RoundedButton {
   Widget build(BuildContext context) {
     return SizedBox(
         width: screenWidthPercentage(context, percentage: 0.85),
-        height: 50,
+        height: screenHeightPercentage(context, percentage: 0.06),
         child: ElevatedButton.icon(
           icon: Icon(iconData,color: iconColor),
           style: ElevatedButton.styleFrom(

@@ -1,4 +1,5 @@
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
+import 'package:aversan_pig_streaming/constants/margins.dart';
 import 'package:aversan_pig_streaming/screens/password_recovery.dart';
 import 'package:aversan_pig_streaming/screens/sign_up.dart';
 import 'package:aversan_pig_streaming/widgets/circles_in_login_page.dart';
@@ -8,6 +9,7 @@ import 'package:flutter/material.dart';
 
 import '../constants/strings.dart';
 import '../constants/themes/dark_color_scheme.dart';
+import '../widgets/main_app_bar.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -17,13 +19,7 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        iconTheme: IconThemeData(
-          color: WHITE, //change your color here
-        ),
-      ),
+      appBar: MainAppBar(COLOR_TRANSPARENT, WHITE),
       body: CustomPaint(
         painter: Circle(),
         child: Center(
@@ -31,22 +27,12 @@ class SignInPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // Immagine del puorchetiello
                 Image.asset(IMAGE_PIG_HD_2_PATH),
-                CustomTextFieldWithIcon(
-                    EMAIL, GREY, MAIN_PINK, 2, Icons.email, MAIN_BLACK),
-                CustomTextFieldWithIcon(
-                    PASSWORD,
-                    GREY,
-                    MAIN_PINK,
-                    2,
-                    obscureTextFlag: true,
-                    Icons.lock_outlined,
-                    MAIN_BLACK),
-                Container(
-                  margin: EdgeInsets.only(top: 15),
-                  child: RoundedButton(
-                      SIGN_IN_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE),
-                ),
+                // Form di login
+                SignInForm(),
+                // Parte sotto al form di login che comprende le chiamate al form di registrazione
+                // e al form di recupero password
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -82,13 +68,70 @@ class SignInPage extends StatelessWidget {
                     ),
                   ],
                 ),
-              Padding(
-                    padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).viewInsets.bottom))
+                // Padding per evitare che la tastiera copra la UI
+                Padding(
+                      padding: EdgeInsets.only(
+                          top: MediaQuery.of(context).viewInsets.bottom)
+                )
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+// Crea il widget del form di accesso
+class SignInForm extends StatefulWidget {
+  const SignInForm({super.key});
+
+  @override
+  SignInFormState createState() {
+    return SignInFormState();
+  }
+}
+
+// Crea una classe State corrispondente. 
+// Questa classe contiene i dati relativi al modulo.
+class SignInFormState extends State<SignInForm> {
+  // Crea una chiave globale che identifichi in modo univoco il widget Modulo
+  // e consente la validazione del form.
+  final _formKey = GlobalKey<FormState>();
+
+  void _validateForm() {
+    // Validate restituisce true se il form è valido, false in caso contrario.
+    if (_formKey.currentState!.validate()) {
+      // Se il modulo è valido, visualizza uno snackbar. Nel mondo reale,
+      // chiameresti spesso un server o salveresti le informazioni in un database.
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Processing Data')),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // Costruisci un widget Modulo utilizzando _formKey creato sopra.
+    return Form(
+      key: _formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            margin: EdgeInsets.only(bottom: marginSmall(context)),
+            child: EmailTextFormFieldWithIcon(EMAIL, GREY, MAIN_PINK, 2, Icons.email, MAIN_BLACK),
+          ),
+          Container(
+            margin: EdgeInsets.only(bottom: marginSmall(context)),
+            child: CustomTextFieldWithIcon(PASSWORD, GREY, MAIN_PINK, 2, obscureTextFlag: true, Icons.lock_outlined, MAIN_BLACK),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: marginSmall(context)),
+            child: RoundedButton(SIGN_IN_TEXT_ITALIAN, _validateForm, MAIN_PINK, WHITE),
+          ),
+        ],
       ),
     );
   }

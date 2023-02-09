@@ -20,4 +20,4 @@ double fontSizeMid(BuildContext context) =>
     screenHeightPercentage(context, percentage: 0.020);
 
 double fontSizeSmall(BuildContext context) =>
-    screenHeightPercentage(context, percentage: 0.015);
+    screenHeightPercentage(context, percentage: 0.016);
