@@ -28,11 +28,27 @@ class SignUpPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // Bottone per selezionare l'immagine avatar
                 ImagePickerButton(ImagePickScreen()),
+                // Text field dell'email
                 CustomTextFieldWithIcon(
-                    EMAIL, GREY, MAIN_PINK, 2, EMAIL_ICON, MAIN_BLACK),
-                CustomTextFieldWithIcon(USERNAME, GREY, MAIN_PINK, 2,
-                    ACCOUNT_CIRCLE_ICON, MAIN_BLACK),
+                    EMAIL, 
+                    GREY, 
+                    MAIN_PINK, 
+                    2, 
+                    EMAIL_ICON, 
+                    MAIN_BLACK
+                ),
+                // Text field dell'username
+                CustomTextFieldWithIcon(
+                    USERNAME, 
+                    GREY, 
+                    MAIN_PINK, 
+                    2,
+                    ACCOUNT_CIRCLE_ICON, 
+                    MAIN_BLACK
+                ),
+                // Text field della password
                 CustomTextFieldWithIcon(
                     PASSWORD,
                     GREY,
@@ -40,7 +56,9 @@ class SignUpPage extends StatelessWidget {
                     2,
                     obscureTextFlag: true,
                     LOCK_OUTLINED_ICON,
-                    MAIN_BLACK),
+                    MAIN_BLACK
+                ),
+                // Text field del conferma password
                 CustomTextFieldWithIcon(
                     CONFIRM_PASSWORD_ITALIAN,
                     GREY,
@@ -48,13 +66,21 @@ class SignUpPage extends StatelessWidget {
                     2,
                     obscureTextFlag: true,
                     LOCK_ICON,
-                    MAIN_BLACK),
+                    MAIN_BLACK
+                ),
+                // Bottone di invio modulo
                 Container(
                   margin: EdgeInsets.only(
-                      top: screenHeightPercentage(context, percentage: 0.015)),
+                      top: screenHeightPercentage(context, percentage: 0.015)
+                  ),
                   child: RoundedButton(
-                      SIGN_UP_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE),
+                      SIGN_UP_TEXT_ITALIAN, 
+                      () {}, 
+                      MAIN_PINK, 
+                      WHITE
+                  ),
                 ),
+                // Pulsante "Hai già un account?"
                 Container(
                   margin: EdgeInsets.only(
                       top: screenHeightPercentage(context, percentage: 0.04)),
@@ -68,14 +94,18 @@ class SignUpPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const SignInPage()),
+                            builder: (context) => const SignInPage()
+                        ),
                       );
                     },
                   ),
                 ),
+                // Padding per evitare che la tastiera copra la UI
                 Padding(
                     padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).viewInsets.bottom)),
+                        top: MediaQuery.of(context).viewInsets.bottom
+                    )
+                ),
               ],
             ),
           ),

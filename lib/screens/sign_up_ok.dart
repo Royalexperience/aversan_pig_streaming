@@ -1,6 +1,5 @@
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
-import 'package:wave/config.dart';
-import 'package:wave/wave.dart';
+import 'package:aversan_pig_streaming/widgets/pink_wave.dart';
 import 'package:aversan_pig_streaming/widgets/main_app_bar.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
@@ -20,28 +19,10 @@ class SignUpOk extends StatelessWidget {
       bottomNavigationBar: BottomAppBar(
         color: COLOR_TRANSPARENT,
         elevation: 0,
-        child: WaveWidget(
-          duration: 1,
-          config: CustomConfig(
-            gradients: [
-              [MAIN_PINK, GREY],
-              [MAIN_PINK, GREY],
-              [MAIN_PINK, GREY],
-              [MAIN_PINK, GREY]
-            ],
-            durations: [35000, 19440, 10800, 6000],
-            heightPercentages: [0.10, 0.13, 0.15, 0.20],
-            blur: MaskFilter.blur(BlurStyle.inner, 5),
-            gradientBegin: Alignment.centerRight,
-            gradientEnd: Alignment.centerLeft,
-          ),
-          waveAmplitude: 1.0,
-          size: Size(double.infinity, 200.0),
-        ),
+        child: PinkWaveWidget(),
       ),
       resizeToAvoidBottomInset: false,
       body: CustomPaint(
-        //painter: Circle(),
         child: Center(
           child: SingleChildScrollView(
             child: Column(
