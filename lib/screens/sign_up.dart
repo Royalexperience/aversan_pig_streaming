@@ -7,6 +7,8 @@ import 'package:aversan_pig_streaming/widgets/custom_text_field.dart';
 import 'package:aversan_pig_streaming/widgets/main_app_bar.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 import '../constants/strings.dart';
 import '../constants/themes/dark_color_scheme.dart';
@@ -89,14 +91,28 @@ class SignUpFormState extends State<SignUpForm> {
   final TextEditingController _passController = TextEditingController();
   final TextEditingController _confirmPassController = TextEditingController();
 
-  void _validateForm() {
+  Future<void> _register() async {
     // Validate restituisce true se il form è valido, false in caso contrario.
     if (_formKey.currentState!.validate()) {
-      // Se il modulo è valido, visualizza uno snackbar. Nel mondo reale,
-      // chiameresti spesso un server o salveresti le informazioni in un database.
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Processing Data')),
+      // Crea l'oggetto contenente i dati del form
+      // Make the API request to register the user
+      final response = await http.post(
+        Uri.parse('postgres//postgres:postgres@151.77.6.39/Utenze?sslmode=disable'),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({
+          'email': _emailController.text,
+          'username': _usernameController.text,
+          'password': _passController.text,
+        }),
       );
+
+      if (response.statusCode == 200) {
+        // Handle a successful registration
+        print('User registered successfully');
+      } else {
+        // Handle a failed registration
+        print('Failed to register user');
+      }
     }
   }
 
@@ -132,7 +148,7 @@ class SignUpFormState extends State<SignUpForm> {
           // Bottone di invio modulo
           Container(
             margin: EdgeInsets.only(top: marginSmall(context)),
-            child: RoundedButton(SIGN_UP_TEXT_ITALIAN, _validateForm, MAIN_PINK, WHITE),
+            child: RoundedButton(SIGN_UP_TEXT_ITALIAN, _register, MAIN_PINK, WHITE),
           ),
         ],
       ),
