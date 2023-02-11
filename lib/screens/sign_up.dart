@@ -6,10 +6,10 @@ import 'package:aversan_pig_streaming/widgets/circles_in_login_page.dart';
 import 'package:aversan_pig_streaming/widgets/custom_text_field.dart';
 import 'package:aversan_pig_streaming/widgets/main_app_bar.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
+import 'package:crypt/crypt.dart';
 import 'package:flutter/material.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 
+import '../api/api.dart';
 import '../constants/strings.dart';
 import '../constants/themes/dark_color_scheme.dart';
 import '../widgets/image_picker_button.dart';
@@ -94,18 +94,16 @@ class SignUpFormState extends State<SignUpForm> {
   Future<void> _register() async {
     // Validate restituisce true se il form è valido, false in caso contrario.
     if (_formKey.currentState!.validate()) {
-      // Crea l'oggetto contenente i dati del form
-      // Make the API request to register the user
-      final response = await http.post(
-        Uri.parse('postgres//postgres:postgres@151.77.6.39/Utenze?sslmode=disable'),
-        headers: {'Content-Type': 'application/json'},
-        body: json.encode({
-          'email': _emailController.text,
-          'username': _usernameController.text,
-          'password': _passController.text,
-        }),
-      );
-
+      // Inserisci i dati in un oggetto JSON
+      var data = {
+        'email': _emailController.text,
+        'username': _usernameController.text,
+        'password': Crypt.sha256(_passController.text),
+      };
+      // Richiama il metodo post della classe API per inviare i dati al
+      // database
+      final response = await API.post(data);
+      // Controllo il responso
       if (response.statusCode == 200) {
         // Handle a successful registration
         print('User registered successfully');

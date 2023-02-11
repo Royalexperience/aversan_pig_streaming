@@ -2,8 +2,10 @@ import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/screens/login.dart';
 import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
 import 'package:flutter/material.dart';
+import 'api/api.dart';
 
 void main() {
+  API.buildConnectionString();
   runApp(const MyApp());
 }
 

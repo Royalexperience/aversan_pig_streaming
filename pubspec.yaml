@@ -17,6 +17,7 @@ dependencies:
   email_validator: ^2.1.17
   crypt: ^4.2.1
   http: ^0.13.5
+  flutter_dotenv: ^5.0.2
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +62,7 @@ flutter:
     - assets/images/avatar_jack.png
     - assets/images/avatar_mario.png
     - assets/images/avatar_genny.png
+    - config-local.env
 
   fonts:
     - family: Coolvetica
