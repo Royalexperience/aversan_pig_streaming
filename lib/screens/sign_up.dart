@@ -9,10 +9,11 @@ import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
 import 'package:crypt/crypt.dart';
 import 'package:flutter/material.dart';
 
-import '../api/api.dart';
-import '../constants/strings.dart';
-import '../constants/themes/dark_color_scheme.dart';
-import '../widgets/image_picker_button.dart';
+import 'package:aversan_pig_streaming/api/api.dart';
+import 'package:aversan_pig_streaming/api/aps_encrypt.dart';
+import 'package:aversan_pig_streaming/constants/strings.dart';
+import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
+import 'package:aversan_pig_streaming/widgets/image_picker_button.dart';
 import 'image_pick_screen.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -98,7 +99,7 @@ class SignUpFormState extends State<SignUpForm> {
       var data = {
         'email': _emailController.text,
         'username': _usernameController.text,
-        'password': Crypt.sha256(_passController.text),
+        'password': APSEncrypt.encrypt(_passController.text),
       };
       // Richiama il metodo post della classe API per inviare i dati al
       // database

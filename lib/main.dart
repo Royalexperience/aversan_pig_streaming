@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'api/api.dart';
 
 void main() {
-  API.buildConnectionString();
+  API.readEnvFile();
   runApp(const MyApp());
 }
 
