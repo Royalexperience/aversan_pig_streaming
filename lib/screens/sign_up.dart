@@ -105,7 +105,7 @@ class SignUpFormState extends State<SignUpForm> {
       // database
       final response = await API.post(data);
       // Controllo il responso
-      if (response.statusCode == 200) {
+      if (response.statusCode == 201) {
         // Handle a successful registration
         print('User registered successfully');
       } else {
