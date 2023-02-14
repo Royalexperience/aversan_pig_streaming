@@ -1,18 +1,25 @@
+import 'package:aversan_pig_streaming/screens/image_pick_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants/themes/dark_color_scheme.dart';
 import '../constants/themes/helping_functions.dart';
 import '../utils/utils.dart';
 
 class ImagePickerButton extends StatefulWidget {
-  static String imagePath = Utils.getUserAvatarList()[0].avatarImagePath;
-  final Widget nextScreen;
-  const ImagePickerButton( this.nextScreen, {super.key});
+  static String imagePath = Utils.getUserAvatarList()[0].avatarImagePath; // Percorso dell'immagine di default
+  const ImagePickerButton({super.key});
   
   @override
   State<StatefulWidget> createState() => _ImagePickerButtoState();
 }
 
 class _ImagePickerButtoState extends State<ImagePickerButton> {
+
+  @override
+  void initState() {
+    super.initState();
+    ImagePickerButton.imagePath = Utils.getUserAvatarList()[0].avatarImagePath;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -35,14 +42,15 @@ class _ImagePickerButtoState extends State<ImagePickerButton> {
                 borderOnForeground: true,
                 child: InkWell(
                     onTap: () async {
-                      var indexImage = await Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => widget.nextScreen));
-                      ImagePickerButton.imagePath = Utils.getUserAvatarList()[indexImage].avatarImagePath;
-                      setState(() {});
+                      var indexImage = await Navigator.push(context, MaterialPageRoute(builder: (context) => ImagePickScreen()));
+                      setState(() {
+                        ImagePickerButton.imagePath = Utils.getUserAvatarList()[indexImage].avatarImagePath;
+                      });
                     },
                     child: Image.asset(
                       ImagePickerButton.imagePath,
-                    )),
+                    )
+                ),
               ),
             ),
           ),

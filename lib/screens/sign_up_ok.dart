@@ -1,5 +1,5 @@
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
-import 'package:aversan_pig_streaming/widgets/pink_wave.dart';
+import 'package:aversan_pig_streaming/routes/aps_routes.dart';
 import 'package:aversan_pig_streaming/widgets/main_app_bar.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
@@ -16,11 +16,6 @@ class SignUpOk extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: MainAppBar(COLOR_TRANSPARENT, WHITE),
-      bottomNavigationBar: BottomAppBar(
-        color: COLOR_TRANSPARENT,
-        elevation: 0,
-        child: PinkWaveWidget(),
-      ),
       resizeToAvoidBottomInset: false,
       body: CustomPaint(
         child: Center(
@@ -68,7 +63,10 @@ class SignUpOk extends StatelessWidget {
                       top: marginSmall(context)
                   ),
                   child: RoundedButton(
-                      YOUR_FIRST_ACCESS_ITALIAN, () {}, MAIN_PINK, WHITE),
+                      YOUR_FIRST_ACCESS_ITALIAN, () {
+                        // Rimanda alla pagina di login
+                        Navigator.pushNamed(context, APSNamedRoute.signInPage,);
+                      }, MAIN_PINK, WHITE),
                 ),
               ],
             ),

@@ -12,7 +12,6 @@ import 'package:aversan_pig_streaming/api/aps_encrypt.dart';
 import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
 import 'package:aversan_pig_streaming/widgets/image_picker_button.dart';
-import 'image_pick_screen.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -31,7 +30,7 @@ class SignUpPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Bottone per selezionare l'immagine avatar
-                ImagePickerButton(ImagePickScreen()),
+                ImagePickerButton(),
                 // Form di registrazione
                 SignUpForm(),
                 // Pulsante "Hai già un account?"
@@ -101,8 +100,9 @@ class SignUpFormState extends State<SignUpForm> {
       // Controllo il responso
       if (response.statusCode == 201) {
         // Handle a successful registration
-        print('User registered successfully');
-        // ignore: use_build_context_synchronously
+        if (mounted) {
+          Navigator.pushNamed(context, APSNamedRoute.signUpOkPage);
+        }
       } else {
         // Handle a failed registration
         print('Failed to register user');
