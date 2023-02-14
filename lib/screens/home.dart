@@ -1,8 +1,7 @@
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
 import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
-import 'package:aversan_pig_streaming/screens/sign_in.dart';
-import 'package:aversan_pig_streaming/screens/sign_up.dart';
+import 'package:aversan_pig_streaming/routes/aps_routes.dart';
 import 'package:aversan_pig_streaming/widgets/google_icons_icons.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +9,8 @@ import 'package:flutter/material.dart';
 import '../widgets/circles_in_login_page.dart';
 
 // Schermata principale
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,10 +44,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     onTap: () {
                       // Rimanda alla schermata di login
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const SignInPage()),
-                      );
+                      Navigator.pushNamed(context, APSNamedRoute.signInPage,);
                     },
                   )
                 ],
@@ -59,10 +55,7 @@ class LoginPage extends StatelessWidget {
                 margin: EdgeInsets.only(top: 15, bottom: 15),
                 child: RoundedButton(SIGN_UP_WEMAIL_ITALIAN, () {
                   // Rimanda alla pagina di registrazione
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const SignUpPage()),
-                  );
+                  Navigator.pushNamed(context, APSNamedRoute.signUpPage,);
                 }, MAIN_PINK, WHITE)
             ),
             // Bottone custom per l'accesso con google

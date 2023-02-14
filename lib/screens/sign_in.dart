@@ -1,7 +1,6 @@
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
 import 'package:aversan_pig_streaming/constants/margins.dart';
-import 'package:aversan_pig_streaming/screens/password_recovery.dart';
-import 'package:aversan_pig_streaming/screens/sign_up.dart';
+import 'package:aversan_pig_streaming/routes/aps_routes.dart';
 import 'package:aversan_pig_streaming/widgets/circles_in_login_page.dart';
 import 'package:aversan_pig_streaming/widgets/custom_text_field.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
@@ -44,10 +43,8 @@ class SignInPage extends StatelessWidget {
                           style: TextStyle(fontSize: FONT_SIZE_MID, color: WHITE),
                         ),
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const SignUpPage()),
-                          );
+                          // Rimanda alla pagina di registrazione
+                          Navigator.pushNamed(context, APSNamedRoute.signUpPage,);
                         },
                       ),
                     ),
@@ -59,10 +56,8 @@ class SignInPage extends StatelessWidget {
                           style: TextStyle(fontSize: FONT_SIZE_MID, color: WHITE),
                         ),
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const PasswordRecovery()),
-                          );
+                          // Rimanda alla schermata di recupero password
+                          Navigator.pushNamed(context, APSNamedRoute.forgotPasswordPage);
                         },
                       ),
                     ),

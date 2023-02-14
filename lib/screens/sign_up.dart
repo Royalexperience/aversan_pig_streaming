@@ -1,14 +1,12 @@
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
 import 'package:aversan_pig_streaming/constants/themes/helping_functions.dart';
 import 'package:aversan_pig_streaming/constants/margins.dart';
-import 'package:aversan_pig_streaming/screens/sign_in.dart';
+import 'package:aversan_pig_streaming/routes/aps_routes.dart';
 import 'package:aversan_pig_streaming/widgets/circles_in_login_page.dart';
 import 'package:aversan_pig_streaming/widgets/custom_text_field.dart';
 import 'package:aversan_pig_streaming/widgets/main_app_bar.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
-import 'package:crypt/crypt.dart';
 import 'package:flutter/material.dart';
-
 import 'package:aversan_pig_streaming/api/api.dart';
 import 'package:aversan_pig_streaming/api/aps_encrypt.dart';
 import 'package:aversan_pig_streaming/constants/strings.dart';
@@ -47,12 +45,8 @@ class SignUpPage extends StatelessWidget {
                       style: TextStyle(fontSize: FONT_SIZE_MID, color: WHITE),
                     ),
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SignInPage()
-                        ),
-                      );
+                      // Rimanda alla pagina di login
+                      Navigator.pushNamed(context, APSNamedRoute.signInPage,);
                     },
                   ),
                 ),
@@ -108,6 +102,7 @@ class SignUpFormState extends State<SignUpForm> {
       if (response.statusCode == 201) {
         // Handle a successful registration
         print('User registered successfully');
+        // ignore: use_build_context_synchronously
       } else {
         // Handle a failed registration
         print('Failed to register user');

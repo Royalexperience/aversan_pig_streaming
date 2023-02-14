@@ -5,14 +5,14 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:aversan_pig_streaming/screens/login.dart';
+import 'package:aversan_pig_streaming/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 Future<void> main() async {
   Widget testWidget = MediaQuery(
       data: MediaQueryData(),
-      child: MaterialApp(home: LoginPage())
+      child: MaterialApp(home: HomePage())
   );
 
   testWidgets('Login Page smoke test', (WidgetTester tester) async {

@@ -1,5 +1,6 @@
 import 'package:aversan_pig_streaming/constants/strings.dart';
-import 'package:aversan_pig_streaming/screens/login.dart';
+import 'package:aversan_pig_streaming/routes/aps_routes.dart';
+import 'package:aversan_pig_streaming/screens/home.dart';
 import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'api/api.dart';
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       title: APPLICATION_NAME,
       debugShowCheckedModeBanner: false,
       theme: _darkTheme(),
-      home: LoginPage(),
+      home: HomePage(),
+      onGenerateRoute: APSNamedRoute.controller,
     );
   }
 }
