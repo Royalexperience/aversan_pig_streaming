@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:aversan_pig_streaming/constants/themes/helping_functions.dart';
 
 // ignore: constant_identifier_names
-const double FONT_SIZE_HUGE = 26.0;
+const double FONT_SIZE_HUGE = 32.0;
 // ignore: constant_identifier_names
-const double FONT_SIZE_BIG = 18.0;
+const double FONT_SIZE_BIG = 20.0;
 // ignore: constant_identifier_names
 const double FONT_SIZE_MID = 16.0;
 // ignore: constant_identifier_names

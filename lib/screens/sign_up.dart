@@ -1,9 +1,11 @@
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
-import 'package:aversan_pig_streaming/constants/themes/helping_functions.dart';
+import 'package:aversan_pig_streaming/constants/response_string.dart';
 import 'package:aversan_pig_streaming/constants/margins.dart';
 import 'package:aversan_pig_streaming/routes/aps_routes.dart';
+import 'package:aversan_pig_streaming/widgets/button_only_text.dart';
 import 'package:aversan_pig_streaming/widgets/circles_in_login_page.dart';
 import 'package:aversan_pig_streaming/widgets/custom_text_field.dart';
+import 'package:aversan_pig_streaming/widgets/dark_modal_bottom.dart';
 import 'package:aversan_pig_streaming/widgets/main_app_bar.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,8 @@ import 'package:aversan_pig_streaming/api/aps_encrypt.dart';
 import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
 import 'package:aversan_pig_streaming/widgets/image_picker_button.dart';
+import 'package:http/http.dart';
+import 'dart:convert';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -34,21 +38,9 @@ class SignUpPage extends StatelessWidget {
                 // Form di registrazione
                 SignUpForm(),
                 // Pulsante "Hai già un account?"
-                Container(
-                  margin: EdgeInsets.only(
-                      top: screenHeightPercentage(context, percentage: 0.04)),
-                  alignment: Alignment.center,
-                  child: InkWell(
-                    child: Text(
-                      ALREADY_ACCOUNT_ITALIAN,
-                      style: TextStyle(fontSize: FONT_SIZE_MID, color: WHITE),
-                    ),
-                    onTap: () {
-                      // Rimanda alla pagina di login
-                      Navigator.pushNamed(context, APSNamedRoute.signInPage,);
-                    },
-                  ),
-                ),
+                ButtonOnlyText(ALREADY_ACCOUNT_ITALIAN, onPress: () {
+                  Navigator.pushNamed(context, APSNamedRoute.signInPage,);
+                },),
                 // Padding per evitare che la tastiera copra la UI
                 Padding(
                     padding: EdgeInsets.only(
@@ -85,6 +77,87 @@ class SignUpFormState extends State<SignUpForm> {
   final TextEditingController _passController = TextEditingController();
   final TextEditingController _confirmPassController = TextEditingController();
 
+  void _handleResponse(Response response) {
+    // Avvenuta registrazione
+    if (response.statusCode == OK_REGISTRATION) {
+      // Gestisci l'avvenuta registrazione
+      if (mounted) {
+        Navigator.pushNamed(context, APSNamedRoute.signUpOkPage);
+      }
+    }
+    // Situazione di errore
+    else if (response.statusCode == INTERNAL_ERROR) {
+      // Ottieni il corpo del json
+      final responseBody = json.decode(response.body);
+      // Controlla il messaggio ricevuto in risposta
+      if (responseBody['message'] == DUPLICATED_EMAIL_MESSAGE) {
+        // Mostra il modal di errore
+        showModalBottomSheet<void>(
+            context: context,
+            backgroundColor: COLOR_TRANSPARENT,
+            builder: (BuildContext context) {
+              return DarkModalBottom(
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      // Titolo del modal
+                      Container(
+                        margin: EdgeInsets.only(top: marginMid(context)),
+                        child: Text(
+                        ALERT_ITALIAN,
+                        style: TextStyle(
+                            fontSize: FONT_SIZE_HUGE, 
+                            color: WHITE, 
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      // Messaggio del modal
+                      Container(
+                        margin: EdgeInsets.only(top: marginMid(context)),
+                        child: Text(
+                          EMAIL_ALREADY_TAKEN_ITALIAN,
+                          style: TextStyle(
+                            fontSize: FONT_SIZE_BIG, 
+                            color: WHITE, 
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      // Bottone che rimanda alla schermata di login
+                      Container(
+                        margin: EdgeInsets.only(top: marginMid(context)),
+                        child: RoundedButton(
+                          SIGN_IN_TEXT_ITALIAN, 
+                          () { Navigator.pushNamed(context, APSNamedRoute.signInPage); }, 
+                          MAIN_PINK, 
+                          WHITE
+                        ),
+                      ),
+                      // Bottone che rimanda alla schermata di recupero password
+                      Container(
+                        margin: EdgeInsets.only(top: marginSmall(context)),
+                        child: RoundedButton(
+                          RECOVER_YOUR_PASSWORD_ITALIAN, 
+                          () { Navigator.pushNamed(context, APSNamedRoute.forgotPasswordPage); }, 
+                          MAIN_PINK, 
+                          WHITE
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+          },
+        );
+      }
+    }
+  }
+
   Future<void> _register() async {
     // Validate restituisce true se il form è valido, false in caso contrario.
     if (_formKey.currentState!.validate()) {
@@ -97,16 +170,8 @@ class SignUpFormState extends State<SignUpForm> {
       // Richiama il metodo post della classe API per inviare i dati al
       // database
       final response = await API.post(data);
-      // Controllo il responso
-      if (response.statusCode == 201) {
-        // Handle a successful registration
-        if (mounted) {
-          Navigator.pushNamed(context, APSNamedRoute.signUpOkPage);
-        }
-      } else {
-        // Handle a failed registration
-        print('Failed to register user');
-      }
+      // Controlla il responso
+      _handleResponse(response);
     }
   }
 

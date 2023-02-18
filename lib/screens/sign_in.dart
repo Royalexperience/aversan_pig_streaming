@@ -1,11 +1,10 @@
-import 'package:aversan_pig_streaming/constants/font_sizes.dart';
 import 'package:aversan_pig_streaming/constants/margins.dart';
 import 'package:aversan_pig_streaming/routes/aps_routes.dart';
+import 'package:aversan_pig_streaming/widgets/button_only_text.dart';
 import 'package:aversan_pig_streaming/widgets/circles_in_login_page.dart';
 import 'package:aversan_pig_streaming/widgets/custom_text_field.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
-
 import '../constants/strings.dart';
 import '../constants/themes/dark_color_scheme.dart';
 import '../widgets/main_app_bar.dart';
@@ -35,38 +34,21 @@ class SignInPage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Container(
-                      margin: EdgeInsets.only(top: 35, bottom: 35),
-                      child: InkWell(
-                        child: Text(
-                          NO_ACCOUNT_ITALIAN,
-                          style: TextStyle(fontSize: FONT_SIZE_MID, color: WHITE),
-                        ),
-                        onTap: () {
-                          // Rimanda alla pagina di registrazione
-                          Navigator.pushNamed(context, APSNamedRoute.signUpPage,);
-                        },
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 35, bottom: 35),
-                      child: InkWell(
-                        child: Text(
-                          FORGOT_PASSWORD_ITALIAN,
-                          style: TextStyle(fontSize: FONT_SIZE_MID, color: WHITE),
-                        ),
-                        onTap: () {
-                          // Rimanda alla schermata di recupero password
-                          Navigator.pushNamed(context, APSNamedRoute.forgotPasswordPage);
-                        },
-                      ),
-                    ),
+                    // Rimanda alla pagina di registrazione
+                    ButtonOnlyText(NO_ACCOUNT_ITALIAN, onPress: () {
+                      Navigator.pushNamed(context, APSNamedRoute.signUpPage,);
+                    },),
+                    // Rimanda alla schermata di recupero password
+                    ButtonOnlyText(FORGOT_PASSWORD_ITALIAN, onPress: () {
+                      Navigator.pushNamed(context, APSNamedRoute.forgotPasswordPage);
+                    }),
                   ],
                 ),
                 // Padding per evitare che la tastiera copra la UI
                 Padding(
-                      padding: EdgeInsets.only(
-                          top: MediaQuery.of(context).viewInsets.bottom)
+                  padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).viewInsets.bottom
+                  )
                 )
               ],
             ),
