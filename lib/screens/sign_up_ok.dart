@@ -23,6 +23,7 @@ class SignUpOk extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // Testo registrazione avvenuta con successo
                 Center(
                   child: Text(
                     SIGN_UP_OK_ITALIAN_PT1,
@@ -41,10 +42,12 @@ class SignUpOk extends StatelessWidget {
                     ),
                   ),
                 ),
+                // Margine per creare lo spazio
                 Container(
                   margin: EdgeInsets.only(bottom: marginSmall(context)
                   ),
                 ),
+                // Testo di account creato
                 Container(
                   margin: EdgeInsets.only(bottom: marginSmall(context)
                   ),
@@ -58,6 +61,7 @@ class SignUpOk extends StatelessWidget {
                     ),
                   ),
                 ),
+                // Bottone che riporta alla pagina di login
                 Container(
                   margin: EdgeInsets.only(
                       top: marginSmall(context)

@@ -14,7 +14,7 @@ const Color WHITE = Color.fromARGB(255, 255, 255, 255);
 // ignore: constant_identifier_names
 const Color GREY = Color.fromARGB(222, 217, 217, 217);
 // ignore: constant_identifier_names
-const Color DARK_GREY = Color.fromARGB(255, 129, 126, 126);
+const Color DARK_GREY = Color.fromARGB(255, 102, 99, 99);
 // ignore: constant_identifier_names
 const Color MAIN_BLACK = Color.fromARGB(255, 0, 0, 0);
 // ignore: constant_identifier_names

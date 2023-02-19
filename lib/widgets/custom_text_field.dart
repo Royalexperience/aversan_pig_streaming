@@ -63,7 +63,7 @@ class CustomTextFieldWithIcon extends CustomTextField {
           filled: true,
           fillColor: WHITE,
           hintStyle: TextStyle(color: helperTextColor),
-          suffixIcon: Icon(iconData, color: iconColor,),
+          prefixIcon: Icon(iconData, color: iconColor,),
           contentPadding: EdgeInsets.symmetric(vertical: screenHeightPercentage(context, percentage: 0.016), horizontal: screenHeightPercentage(context, percentage: 0.016)),
           errorStyle: TextStyle(
             fontSize: fontSizeSmall(context),
@@ -107,7 +107,7 @@ class EmailTextFormFieldWithIcon extends CustomTextField {
           filled: true,
           fillColor: WHITE,
           hintStyle: TextStyle(color: helperTextColor),
-          suffixIcon: Icon(iconData, color: iconColor,),
+          prefixIcon: Icon(iconData, color: iconColor,),
           contentPadding: EdgeInsets.symmetric(vertical: screenHeightPercentage(context, percentage: 0.016), horizontal: screenHeightPercentage(context, percentage: 0.016)),
           errorStyle: TextStyle(
             fontSize: fontSizeSmall(context),
@@ -153,7 +153,7 @@ class PasswordTextFormFieldWithIcon extends CustomTextField {
           filled: true,
           fillColor: WHITE,
           hintStyle: TextStyle(color: helperTextColor),
-          suffixIcon: Icon(iconData, color: iconColor,),
+          prefixIcon: Icon(iconData, color: iconColor,),
           contentPadding: EdgeInsets.symmetric(vertical: screenHeightPercentage(context, percentage: 0.016), horizontal: screenHeightPercentage(context, percentage: 0.016)),
           errorStyle: TextStyle(
             fontSize: fontSizeSmall(context),
@@ -198,7 +198,7 @@ class ConfirmPasswordTextFormFieldWithIcon extends CustomTextField {
           filled: true,
           fillColor: WHITE,
           hintStyle: TextStyle(color: helperTextColor),
-          suffixIcon: Icon(iconData, color: iconColor,),
+          prefixIcon: Icon(iconData, color: iconColor,),
           contentPadding: EdgeInsets.symmetric(vertical: screenHeightPercentage(context, percentage: 0.016), horizontal: screenHeightPercentage(context, percentage: 0.016)),
           errorStyle: TextStyle(
             fontSize: fontSizeSmall(context),
