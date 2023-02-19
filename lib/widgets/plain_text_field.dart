@@ -20,8 +20,6 @@ class PlainTextField extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
           hintText: hintText,
-          filled: true,
-          fillColor: WHITE,
           prefixIcon: prefixIconFlag ? Icon(ACCOUNT_CIRCLE_ICON, color: MAIN_BLACK,) : null,
           contentPadding: EdgeInsets.symmetric(vertical: screenHeightPercentage(context, percentage: 0.016), horizontal: screenHeightPercentage(context, percentage: 0.016)),
           errorStyle: TextStyle(

@@ -21,8 +21,6 @@ class EmailTextField extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
           hintText: hintText,
-          filled: true,
-          fillColor: WHITE,
           prefixIcon: prefixIconFlag ? Icon(EMAIL_ICON, color: MAIN_BLACK,) : null,
           contentPadding: EdgeInsets.symmetric(vertical: screenHeightPercentage(context, percentage: 0.016), horizontal: screenHeightPercentage(context, percentage: 0.016)),
           errorStyle: TextStyle(

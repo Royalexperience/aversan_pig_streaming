@@ -1,4 +1,6 @@
 // ignore_for_file: constant_identifier_names
+const String FONT_FAMILY_NAME = 'Coolvetica';
+
 const String SIGN_UP_TEXT_ITALIAN = "Registrati";
 const String SIGN_UP_WEMAIL_ITALIAN = "Registrati con la tua email";
 const String SIGN_UP_WGOOGLE_ITALIAN = "Registrati con Google";

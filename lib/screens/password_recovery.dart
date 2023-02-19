@@ -27,7 +27,9 @@ class PasswordRecovery extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // Immagine puorchetiello triste
                 Image.asset(IMAGE_SAD_PIG_PATH, scale: screenHeightPercentage(context, percentage: 0.0020),),
+                // Messaggi per l'utente
                 Container(
                   margin: EdgeInsets.only(bottom: marginSmall(context)),
                   child: Center(
@@ -49,30 +51,31 @@ class PasswordRecovery extends StatelessWidget {
                     ),
                   ),
                 ),
-                Center(
-                  child: Text(
-                    TYPE_EMAIL_ITALIAN,
-                    style: TextStyle(
-                      fontSize: fontSizeMid(context),
-                      color: GREY,
+                Container(
+                  margin: EdgeInsets.only(bottom: marginSmall(context)),
+                  child: Center(
+                    child: Text(
+                      TYPE_EMAIL_ITALIAN,
+                      style: TextStyle(
+                        fontSize: fontSizeMid(context),
+                        color: GREY,
+                      ),
                     ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(bottom: marginSmall(context)),
-                ),
+                // Form per scrivere la e-mail
                 CustomTextFieldWithIcon(
                     EMAIL_ITALIAN, GREY, MAIN_PINK, 2, Icons.email, MAIN_BLACK
                 ),
+                // Bottone di invio
                 Container(
                   margin: EdgeInsets.only(top: marginSmall(context)),
-                  child: RoundedButton(
-                      SEND_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE),
+                  child: RoundedButton(SEND_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE),
                 ),
                 Padding(
-                    padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).viewInsets.bottom
-                    )
+                  padding: EdgeInsets.only(
+                      top: MediaQuery.of(context).viewInsets.bottom
+                  )
                 ),
               ],
             ),
