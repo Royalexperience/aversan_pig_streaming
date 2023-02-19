@@ -1,6 +1,7 @@
 import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/models/user_avatar.dart';
 
+// Questa classe è usata per costruire il percorso delle immagini
 class Utils {
   static List<UserAvatar> getUserAvatarList() {
     return [
