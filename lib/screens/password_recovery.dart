@@ -62,7 +62,7 @@ class PasswordRecovery extends StatelessWidget {
                   margin: EdgeInsets.only(bottom: marginSmall(context)),
                 ),
                 CustomTextFieldWithIcon(
-                    EMAIL, GREY, MAIN_PINK, 2, Icons.email, MAIN_BLACK
+                    EMAIL_ITALIAN, GREY, MAIN_PINK, 2, Icons.email, MAIN_BLACK
                 ),
                 Container(
                   margin: EdgeInsets.only(top: marginSmall(context)),

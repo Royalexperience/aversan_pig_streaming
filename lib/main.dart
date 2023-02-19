@@ -1,7 +1,6 @@
 import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/routes/aps_routes.dart';
 import 'package:aversan_pig_streaming/screens/home.dart';
-import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
 import 'package:aversan_pig_streaming/utils/themes/theme.dart';
 import 'package:flutter/material.dart';
 import 'api/api.dart';

@@ -4,19 +4,12 @@ import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
 import 'package:aversan_pig_streaming/constants/themes/helping_functions.dart';
 import 'package:flutter/material.dart';
 
-class PasswordTextField extends StatefulWidget {
+class PlainTextField extends StatelessWidget {
   final String hintText;
   final TextEditingController controller;
   final bool prefixIconFlag;
 
-  const PasswordTextField({super.key, required this.hintText, required this.controller, this.prefixIconFlag = false});
-
-  @override
-  State<StatefulWidget> createState() => _PasswordTextFieldState();
-}
-
-class _PasswordTextFieldState extends State<PasswordTextField> {
-  bool _obscureText = true;
+  const PlainTextField({super.key, required this.hintText, required this.controller, this.prefixIconFlag = false});
 
   @override
   Widget build(BuildContext context) {
@@ -24,28 +17,19 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
       width: screenWidthPercentage(context, percentage: 0.85),
       height: screenHeightPercentage(context,percentage: 0.08),
       child: TextFormField(
-        controller: widget.controller,
-        obscureText: _obscureText,
-        enableSuggestions: false,
-        autocorrect: false,
+        controller: controller,
         decoration: InputDecoration(
-          hintText: widget.hintText,
-          errorStyle: TextStyle(fontSize: fontSizeSmall(context),),
+          hintText: hintText,
+          filled: true,
+          fillColor: WHITE,
+          prefixIcon: prefixIconFlag ? Icon(ACCOUNT_CIRCLE_ICON, color: MAIN_BLACK,) : null,
           contentPadding: EdgeInsets.symmetric(vertical: screenHeightPercentage(context, percentage: 0.016), horizontal: screenHeightPercentage(context, percentage: 0.016)),
-          prefixIcon: widget.prefixIconFlag ? Icon(LOCK_OUTLINED_ICON, color: MAIN_BLACK,) : null,
-          suffixIcon: GestureDetector(
-            onTap: () {
-              setState(() {
-                _obscureText = !_obscureText;
-              });
-            },
-            child: Icon(
-              color: DARK_GREY,
-              _obscureText ? Icons.visibility : Icons.visibility_off,
-              semanticLabel: _obscureText ? SHOW_TEXT_ITALIAN : HIDE_TEXT_ITALIAN,
-            ),
+          errorStyle: TextStyle(
+            fontSize: fontSizeSmall(context),
           ),
         ),
+        enableSuggestions: false,
+        autocorrect: false,
         validator: (value) {
           if (value == null || value.isEmpty) {
             return THIS_FIELD_IS_COMPULSORY_ITALIAN;

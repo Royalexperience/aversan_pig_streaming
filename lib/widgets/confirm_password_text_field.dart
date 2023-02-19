@@ -4,18 +4,19 @@ import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
 import 'package:aversan_pig_streaming/constants/themes/helping_functions.dart';
 import 'package:flutter/material.dart';
 
-class PasswordTextField extends StatefulWidget {
+class ConfirmPasswordTextField extends StatefulWidget {
   final String hintText;
-  final TextEditingController controller;
+  final TextEditingController confirmPasswordController;
+  final TextEditingController? passwordController;
   final bool prefixIconFlag;
 
-  const PasswordTextField({super.key, required this.hintText, required this.controller, this.prefixIconFlag = false});
+  const ConfirmPasswordTextField({super.key, required this.hintText, required this.confirmPasswordController, this.passwordController, this.prefixIconFlag = false});
 
   @override
-  State<StatefulWidget> createState() => _PasswordTextFieldState();
+  State<StatefulWidget> createState() => _ConfirmPasswordTextFieldState();
 }
 
-class _PasswordTextFieldState extends State<PasswordTextField> {
+class _ConfirmPasswordTextFieldState extends State<ConfirmPasswordTextField> {
   bool _obscureText = true;
 
   @override
@@ -24,7 +25,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
       width: screenWidthPercentage(context, percentage: 0.85),
       height: screenHeightPercentage(context,percentage: 0.08),
       child: TextFormField(
-        controller: widget.controller,
+        controller: widget.confirmPasswordController,
         obscureText: _obscureText,
         enableSuggestions: false,
         autocorrect: false,
@@ -49,6 +50,9 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
         validator: (value) {
           if (value == null || value.isEmpty) {
             return THIS_FIELD_IS_COMPULSORY_ITALIAN;
+          }
+          if (value != widget.passwordController!.text) {
+            return PASSWORDS_DOES_NOT_MATCH_ITALIAN;
           }
           return null;
         },

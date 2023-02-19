@@ -2,7 +2,7 @@ import 'package:aversan_pig_streaming/constants/margins.dart';
 import 'package:aversan_pig_streaming/routes/aps_routes.dart';
 import 'package:aversan_pig_streaming/widgets/button_only_text.dart';
 import 'package:aversan_pig_streaming/widgets/circles_in_login_page.dart';
-import 'package:aversan_pig_streaming/widgets/custom_text_field.dart';
+import 'package:aversan_pig_streaming/widgets/email_text_field.dart';
 import 'package:aversan_pig_streaming/widgets/password_text_field.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
@@ -101,11 +101,11 @@ class SignInFormState extends State<SignInForm> {
         children: [
           Container(
             margin: EdgeInsets.only(bottom: marginSmall(context)),
-            child: EmailTextFormFieldWithIcon(EMAIL, GREY, MAIN_PINK, 2, Icons.email, MAIN_BLACK, textController: _emailController,),
+            child: EmailTextField(hintText: EMAIL_ITALIAN, controller: _emailController, prefixIconFlag: true,),
           ),
           Container(
             margin: EdgeInsets.only(bottom: marginSmall(context)),
-            child: PasswordTextField(label: PASSWORD, controller: _passController, prefixIconFlag: true,),
+            child: PasswordTextField(hintText: PASSWORD_ITALIAN, controller: _passController, prefixIconFlag: true,),
           ),
           Container(
             margin: EdgeInsets.only(top: marginSmall(context)),

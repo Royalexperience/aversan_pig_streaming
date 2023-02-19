@@ -13,7 +13,6 @@ class APSAppTheme {
       fillColor: WHITE,
       hintStyle: TextStyle(color: GREY),
       errorStyle: TextStyle(
-        fontSize: 15.0,
         fontFamily: 'Coolvetica',
       ),
       labelStyle: TextStyle(color: GREY,),

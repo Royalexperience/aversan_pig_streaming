@@ -4,9 +4,12 @@ import 'package:aversan_pig_streaming/constants/margins.dart';
 import 'package:aversan_pig_streaming/routes/aps_routes.dart';
 import 'package:aversan_pig_streaming/widgets/button_only_text.dart';
 import 'package:aversan_pig_streaming/widgets/circles_in_login_page.dart';
-import 'package:aversan_pig_streaming/widgets/custom_text_field.dart';
+import 'package:aversan_pig_streaming/widgets/confirm_password_text_field.dart';
 import 'package:aversan_pig_streaming/widgets/dark_modal_bottom.dart';
+import 'package:aversan_pig_streaming/widgets/email_text_field.dart';
 import 'package:aversan_pig_streaming/widgets/main_app_bar.dart';
+import 'package:aversan_pig_streaming/widgets/password_text_field.dart';
+import 'package:aversan_pig_streaming/widgets/plain_text_field.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
 import 'package:aversan_pig_streaming/api/api.dart';
@@ -187,22 +190,22 @@ class SignUpFormState extends State<SignUpForm> {
           // Text field dell'email
           Container(
             margin: EdgeInsets.only(bottom: marginSmall(context)),
-            child: EmailTextFormFieldWithIcon(EMAIL, GREY, MAIN_PINK, 2, Icons.email, MAIN_BLACK, textController: _emailController,),
+            child: EmailTextField(hintText: EMAIL_ITALIAN, controller: _emailController, prefixIconFlag: true,),
           ),
           // Text field dell'username
           Container(
             margin: EdgeInsets.only(bottom: marginSmall(context)),
-            child: CustomTextFieldWithIcon(USERNAME, GREY, MAIN_PINK, 2, ACCOUNT_CIRCLE_ICON, MAIN_BLACK, textController: _usernameController,),
+            child: PlainTextField(hintText: USERNAME_ITALIAN, controller: _usernameController, prefixIconFlag: true,),
           ),
           // Text field della password
           Container(
             margin: EdgeInsets.only(bottom: marginSmall(context)),
-            child: PasswordTextFormFieldWithIcon(PASSWORD, GREY, MAIN_PINK, 2, LOCK_OUTLINED_ICON, MAIN_BLACK, textController: _passController,),
+            child: PasswordTextField(hintText: PASSWORD_ITALIAN, controller: _passController, prefixIconFlag: true,),
           ),
           // Text field del conferma password
           Container(
             margin: EdgeInsets.only(bottom: marginSmall(context)),
-            child: ConfirmPasswordTextFormFieldWithIcon(CONFIRM_PASSWORD_ITALIAN, GREY, MAIN_PINK, 2, LOCK_ICON, MAIN_BLACK, passTextController:_passController, textController: _confirmPassController,),
+            child: ConfirmPasswordTextField(hintText: CONFIRM_PASSWORD_ITALIAN, confirmPasswordController: _confirmPassController, passwordController: _passController, prefixIconFlag: true,),
           ),
           // Bottone di invio modulo
           Container(
