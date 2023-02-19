@@ -34,9 +34,6 @@ class APSAppTheme {
     scrollbarTheme: ScrollbarThemeData(
       thumbColor: MaterialStateProperty.all(MAIN_PINK)), 
       colorScheme: ColorScheme.fromSwatch().copyWith(secondary: MAIN_PINK),
-    textTheme: const TextTheme(
-      headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-    ),
     focusColor: MAIN_PINK,
   );
 }
