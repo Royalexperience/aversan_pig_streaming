@@ -33,7 +33,7 @@ class _ConfirmPasswordTextFieldState extends State<ConfirmPasswordTextField> {
           hintText: widget.hintText,
           errorStyle: TextStyle(fontSize: fontSizeSmall(context),),
           contentPadding: EdgeInsets.symmetric(vertical: screenHeightPercentage(context, percentage: 0.016), horizontal: screenHeightPercentage(context, percentage: 0.016)),
-          prefixIcon: widget.prefixIconFlag ? Icon(LOCK_OUTLINED_ICON, color: MAIN_BLACK,) : null,
+          prefixIcon: widget.prefixIconFlag ? Icon(LOCK_ICON, color: MAIN_BLACK,) : null,
           suffixIcon: GestureDetector(
             onTap: () {
               setState(() {

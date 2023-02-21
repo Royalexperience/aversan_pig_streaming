@@ -195,7 +195,7 @@ class SignUpFormState extends State<SignUpForm> {
           // Text field dell'username
           Container(
             margin: EdgeInsets.only(bottom: marginSmall(context)),
-            child: PlainTextField(hintText: USERNAME_ITALIAN, controller: _usernameController, prefixIconFlag: true,),
+            child: PlainTextField(hintText: USERNAME_ITALIAN, controller: _usernameController, prefixIcon: Icon(ACCOUNT_CIRCLE_ICON, color: MAIN_BLACK,),),
           ),
           // Text field della password
           Container(

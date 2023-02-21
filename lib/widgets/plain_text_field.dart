@@ -1,15 +1,14 @@
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
 import 'package:aversan_pig_streaming/constants/strings.dart';
-import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
 import 'package:aversan_pig_streaming/constants/themes/helping_functions.dart';
 import 'package:flutter/material.dart';
 
 class PlainTextField extends StatelessWidget {
   final String hintText;
   final TextEditingController controller;
-  final bool prefixIconFlag;
+  final Icon? prefixIcon;
 
-  const PlainTextField({super.key, required this.hintText, required this.controller, this.prefixIconFlag = false});
+  const PlainTextField({super.key, required this.hintText, required this.controller, this.prefixIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,7 @@ class PlainTextField extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
           hintText: hintText,
-          prefixIcon: prefixIconFlag ? Icon(ACCOUNT_CIRCLE_ICON, color: MAIN_BLACK,) : null,
+          prefixIcon: prefixIcon,
           contentPadding: EdgeInsets.symmetric(vertical: screenHeightPercentage(context, percentage: 0.016), horizontal: screenHeightPercentage(context, percentage: 0.016)),
           errorStyle: TextStyle(
             fontSize: fontSizeSmall(context),
