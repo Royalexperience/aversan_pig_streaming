@@ -21,7 +21,8 @@ Future<void> main() async {
   Widget mainAppBarTitleTestWidget = const MainAppBar(mockAppBarBackgroundColor, mockThemeColor, textTitle: Text("Title name"),);
   // MainAppBar senza titolo e sfondo
   Widget mainAppBarNoTitleTestWidget = const MainAppBar(mockAppBarBackgroundColor, mockThemeColor,);
-  testWidgets('Test #1: Find title and positioning', (tester) async {
+  group('MainAppBar basic test', () {
+    testWidgets('Test #1: Find title and positioning', (tester) async {
     // Costruisci il widget
     await tester.pumpWidget(HelperTest.buildTestableWidget(mainAppBarTitleTestWidget));
     // Trova un widget che mostri il testo "Title name"
@@ -66,5 +67,6 @@ Future<void> main() async {
     // Ottieni la coordinata superiore del widget MainAppBar
     final actualMainAppBarTop = appBarTop(tester);
     expect(actualMainAppBarTop, 0.0);
+  });
   });
 }
