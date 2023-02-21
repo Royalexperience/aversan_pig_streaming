@@ -137,8 +137,6 @@ class SignUpFormState extends State<SignUpForm> {
                         child: RoundedButton(
                           SIGN_IN_TEXT_ITALIAN, 
                           () { Navigator.pushNamed(context, APSNamedRoute.signInPage); }, 
-                          MAIN_PINK, 
-                          WHITE
                         ),
                       ),
                       // Bottone che rimanda alla schermata di recupero password
@@ -147,8 +145,6 @@ class SignUpFormState extends State<SignUpForm> {
                         child: RoundedButton(
                           RECOVER_YOUR_PASSWORD_ITALIAN, 
                           () { Navigator.pushNamed(context, APSNamedRoute.forgotPasswordPage); }, 
-                          MAIN_PINK, 
-                          WHITE
                         ),
                       ),
                     ],
@@ -210,7 +206,7 @@ class SignUpFormState extends State<SignUpForm> {
           // Bottone di invio modulo
           Container(
             margin: EdgeInsets.only(top: marginSmall(context)),
-            child: RoundedButton(SIGN_UP_TEXT_ITALIAN, _register, MAIN_PINK, WHITE),
+            child: RoundedButton(SIGN_UP_TEXT_ITALIAN, _register,),
           ),
         ],
       ),

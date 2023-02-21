@@ -70,7 +70,7 @@ class SignUpOk extends StatelessWidget {
                       YOUR_FIRST_ACCESS_ITALIAN, () {
                         // Rimanda alla pagina di login
                         Navigator.pushNamed(context, APSNamedRoute.signInPage,);
-                      }, MAIN_PINK, WHITE),
+                      },),
                 ),
               ],
             ),

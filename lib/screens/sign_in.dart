@@ -109,7 +109,7 @@ class SignInFormState extends State<SignInForm> {
           ),
           Container(
             margin: EdgeInsets.only(top: marginSmall(context)),
-            child: RoundedButton(SIGN_IN_TEXT_ITALIAN, _validateForm, MAIN_PINK, WHITE),
+            child: RoundedButton(SIGN_IN_TEXT_ITALIAN, _validateForm,),
           ),
         ],
       ),

@@ -56,14 +56,14 @@ class HomePage extends StatelessWidget {
                 child: RoundedButton(SIGN_UP_WEMAIL_ITALIAN, () {
                   // Rimanda alla pagina di registrazione
                   Navigator.pushNamed(context, APSNamedRoute.signUpPage,);
-                }, MAIN_PINK, WHITE)
+                },)
             ),
             // Bottone custom per l'accesso con google
             RoundendButtonWithIcon(
               SIGN_UP_WGOOGLE_ITALIAN, 
               () {}, 
-              WHITE,
-              MAIN_BLACK, 
+              color: WHITE,
+              textColor: MAIN_BLACK, 
               GoogleIcons.google, MAIN_BLACK
             ),
           ],

@@ -70,7 +70,7 @@ class PasswordRecovery extends StatelessWidget {
                 // Bottone di invio
                 Container(
                   margin: EdgeInsets.only(top: marginSmall(context)),
-                  child: RoundedButton(SEND_TEXT_ITALIAN, () {}, MAIN_PINK, WHITE),
+                  child: RoundedButton(SEND_TEXT_ITALIAN, () {},),
                 ),
                 Padding(
                   padding: EdgeInsets.only(
