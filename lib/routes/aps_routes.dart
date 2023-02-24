@@ -1,5 +1,5 @@
 import 'package:aversan_pig_streaming/screens/home.dart';
-import 'package:aversan_pig_streaming/screens/image_pick_screen.dart';
+import 'package:aversan_pig_streaming/screens/avatar_picker_screen.dart';
 import 'package:aversan_pig_streaming/screens/sign_in.dart';
 import 'package:aversan_pig_streaming/screens/password_recovery.dart';
 import 'package:aversan_pig_streaming/screens/sign_up.dart';
@@ -15,7 +15,7 @@ class APSNamedRoute {
   static const String signUpOkPage = 'signUpOk';
   static const String homePage = 'home';
   static const String forgotPasswordPage = 'forgotPassword';
-  static const String imagePickerScreen = 'imagePickerScreen';
+  static const String avatarPickerScreen = 'avatarPickerScreen';
   // Controllo del flusso delle schermate
   static Route<dynamic> controller(RouteSettings settings) {
     switch (settings.name) {
@@ -29,8 +29,8 @@ class APSNamedRoute {
         return MaterialPageRoute(builder: (context) => SignUpOk());
       case forgotPasswordPage:
         return MaterialPageRoute(builder: (context) => PasswordRecovery());
-      case imagePickerScreen:
-        return MaterialPageRoute(builder: (context) => ImagePickScreen());
+      case avatarPickerScreen:
+        return MaterialPageRoute(builder: (context) => AvatarPickerScreen());
       default:
         throw('This route name does not exit');
     }

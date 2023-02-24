@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import '../constants/themes/dark_color_scheme.dart';
 import '../widgets/main_app_bar.dart';
 
-class ImagePickScreen extends StatefulWidget {
-  const ImagePickScreen({super.key});
+class AvatarPickerScreen extends StatefulWidget {
+  const AvatarPickerScreen({super.key});
 
   @override
-  State<ImagePickScreen> createState() => _ImagePickScreenState();
+  State<AvatarPickerScreen> createState() => _AvatarPickerScreenState();
 }
 
-class _ImagePickScreenState extends State<ImagePickScreen> {
+class _AvatarPickerScreenState extends State<AvatarPickerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

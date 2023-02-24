@@ -16,7 +16,7 @@ import 'package:aversan_pig_streaming/api/api.dart';
 import 'package:aversan_pig_streaming/api/aps_encrypt.dart';
 import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
-import 'package:aversan_pig_streaming/widgets/image_picker_button.dart';
+import 'package:aversan_pig_streaming/widgets/avatar_picker_button.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
 
@@ -37,7 +37,7 @@ class SignUpPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Bottone per selezionare l'immagine avatar
-                ImagePickerButton(),
+                AvatarPickerButton(),
                 // Form di registrazione
                 SignUpForm(),
                 // Pulsante "Hai già un account?"

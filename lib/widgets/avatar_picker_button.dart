@@ -1,23 +1,23 @@
-import 'package:aversan_pig_streaming/screens/image_pick_screen.dart';
+import 'package:aversan_pig_streaming/screens/avatar_picker_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants/themes/dark_color_scheme.dart';
 import '../constants/themes/helping_functions.dart';
 import '../utils/utils.dart';
 
-class ImagePickerButton extends StatefulWidget {
+class AvatarPickerButton extends StatefulWidget {
   static String imagePath = Utils.getUserAvatarList()[0].avatarImagePath; // Percorso dell'immagine di default
-  const ImagePickerButton({super.key});
+  const AvatarPickerButton({super.key});
   
   @override
   State<StatefulWidget> createState() => _ImagePickerButtoState();
 }
 
-class _ImagePickerButtoState extends State<ImagePickerButton> {
+class _ImagePickerButtoState extends State<AvatarPickerButton> {
 
   @override
   void initState() {
     super.initState();
-    ImagePickerButton.imagePath = Utils.getUserAvatarList()[0].avatarImagePath;
+    AvatarPickerButton.imagePath = Utils.getUserAvatarList()[0].avatarImagePath;
   }
 
   @override
@@ -42,13 +42,13 @@ class _ImagePickerButtoState extends State<ImagePickerButton> {
                 borderOnForeground: true,
                 child: InkWell(
                     onTap: () async {
-                      var indexImage = await Navigator.push(context, MaterialPageRoute(builder: (context) => ImagePickScreen()));
+                      var indexImage = await Navigator.push(context, MaterialPageRoute(builder: (context) => AvatarPickerScreen()));
                       setState(() {
-                        ImagePickerButton.imagePath = Utils.getUserAvatarList()[indexImage].avatarImagePath;
+                        AvatarPickerButton.imagePath = Utils.getUserAvatarList()[indexImage].avatarImagePath;
                       });
                     },
                     child: Image.asset(
-                      ImagePickerButton.imagePath,
+                      AvatarPickerButton.imagePath,
                     )
                 ),
               ),
