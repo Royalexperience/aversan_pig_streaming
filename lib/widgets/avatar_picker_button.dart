@@ -9,10 +9,10 @@ class AvatarPickerButton extends StatefulWidget {
   const AvatarPickerButton({super.key});
   
   @override
-  State<StatefulWidget> createState() => _ImagePickerButtoState();
+  State<StatefulWidget> createState() => _AvatarPickerButtoState();
 }
 
-class _ImagePickerButtoState extends State<AvatarPickerButton> {
+class _AvatarPickerButtoState extends State<AvatarPickerButton> {
 
   @override
   void initState() {

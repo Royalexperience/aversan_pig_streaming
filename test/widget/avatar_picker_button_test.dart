@@ -1,4 +1,5 @@
 import 'package:aversan_pig_streaming/constants/themes/helping_functions.dart';
+import 'package:aversan_pig_streaming/screens/avatar_picker_screen.dart';
 import 'package:aversan_pig_streaming/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:aversan_pig_streaming/utils/helper_test.dart';
