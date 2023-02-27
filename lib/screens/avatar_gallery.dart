@@ -1,18 +1,19 @@
 import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/constants/themes/helping_functions.dart';
-import 'package:aversan_pig_streaming/utils/utils.dart';
+import 'package:aversan_pig_streaming/models/user_avatar.dart';
 import 'package:flutter/material.dart';
 import '../constants/themes/dark_color_scheme.dart';
 import '../widgets/main_app_bar.dart';
 
-class AvatarPickerScreen extends StatefulWidget {
-  const AvatarPickerScreen({super.key});
+class AvatarGallery extends StatefulWidget {
+  final List<UserAvatar> avatarInfoList;
+  const AvatarGallery({super.key, required this.avatarInfoList});
 
   @override
-  State<AvatarPickerScreen> createState() => _AvatarPickerScreenState();
+  State<AvatarGallery> createState() => _AvatarGalleryState();
 }
 
-class _AvatarPickerScreenState extends State<AvatarPickerScreen> {
+class _AvatarGalleryState extends State<AvatarGallery> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +32,7 @@ class _AvatarPickerScreenState extends State<AvatarPickerScreen> {
           child: GridView.count(
             crossAxisCount: 2,
             children: List.generate(
-                Utils.getUserAvatarList().length,
+                widget.avatarInfoList.length,
                 (index) {
                   return Container(
                     margin: EdgeInsets.all(screenWidthPercentage(context, percentage: 0.08)),
@@ -43,9 +44,9 @@ class _AvatarPickerScreenState extends State<AvatarPickerScreen> {
                       child: Container(
                         margin: EdgeInsets.all(screenWidthPercentage(context, percentage: 0.001)),
                         child: Column(children: [
-                          Image.asset(Utils.getUserAvatarList()[index].avatarImagePath, width: screenWidthPercentage(context, percentage: 0.30), height: screenHeightPercentage(context, percentage: 0.10),),
+                          Image.asset(widget.avatarInfoList[index].getAvatarImagePath, width: screenWidthPercentage(context, percentage: 0.30), height: screenHeightPercentage(context, percentage: 0.10),),
                           SizedBox(height: screenHeightPercentage(context, percentage: 0.00005)),
-                          Text(Utils.getUserAvatarList()[index].avatarName, style: TextStyle(color: WHITE,),)
+                          Text(widget.avatarInfoList[index].getAvatarName, style: TextStyle(color: WHITE,),)
                         ]),
                       ),
                     ),

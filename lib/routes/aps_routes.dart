@@ -1,5 +1,4 @@
 import 'package:aversan_pig_streaming/screens/home.dart';
-import 'package:aversan_pig_streaming/screens/avatar_picker_screen.dart';
 import 'package:aversan_pig_streaming/screens/sign_in.dart';
 import 'package:aversan_pig_streaming/screens/password_recovery.dart';
 import 'package:aversan_pig_streaming/screens/sign_up.dart';
@@ -29,8 +28,6 @@ class APSNamedRoute {
         return MaterialPageRoute(builder: (context) => SignUpOk());
       case forgotPasswordPage:
         return MaterialPageRoute(builder: (context) => PasswordRecovery());
-      case avatarPickerScreen:
-        return MaterialPageRoute(builder: (context) => AvatarPickerScreen());
       default:
         throw('This route name does not exit');
     }

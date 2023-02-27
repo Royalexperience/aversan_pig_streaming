@@ -1,23 +1,27 @@
-import 'package:aversan_pig_streaming/screens/avatar_picker_screen.dart';
+import 'package:aversan_pig_streaming/models/user_avatar.dart';
+import 'package:aversan_pig_streaming/screens/avatar_gallery.dart';
 import 'package:flutter/material.dart';
 import '../constants/themes/dark_color_scheme.dart';
 import '../constants/themes/helping_functions.dart';
-import '../utils/utils.dart';
 
-class AvatarPickerButton extends StatefulWidget {
-  static String imagePath = Utils.getUserAvatarList()[0].avatarImagePath; // Percorso dell'immagine di default
-  const AvatarPickerButton({super.key});
+class AvatarButtonPicker extends StatefulWidget {
+  final List<UserAvatar> avatarInfoList;
+  const AvatarButtonPicker({super.key, required this.avatarInfoList});
   
   @override
   State<StatefulWidget> createState() => _AvatarPickerButtoState();
 }
 
-class _AvatarPickerButtoState extends State<AvatarPickerButton> {
+class _AvatarPickerButtoState extends State<AvatarButtonPicker> {
+  // Rappresenta il percorso dell'avatar che verrà selezionato nell'avatar gallery
+  // Si usa "late" per specificare che il suo valore è non nullo e verrà inizializzato in seguito
+  late String _selectedAvatar;
 
   @override
   void initState() {
     super.initState();
-    AvatarPickerButton.imagePath = Utils.getUserAvatarList()[0].avatarImagePath;
+    // Ogni volta che il widget viene ricostruito imposta come immagine del bottone quella di default
+    _selectedAvatar = widget.avatarInfoList.first.getAvatarImagePath;
   }
 
   @override
@@ -42,13 +46,13 @@ class _AvatarPickerButtoState extends State<AvatarPickerButton> {
                 borderOnForeground: true,
                 child: InkWell(
                     onTap: () async {
-                      var indexImage = await Navigator.push(context, MaterialPageRoute(builder: (context) => AvatarPickerScreen()));
+                      var indexImage = await Navigator.push(context, MaterialPageRoute(builder: (context) => AvatarGallery(avatarInfoList: widget.avatarInfoList)));
                       setState(() {
-                        AvatarPickerButton.imagePath = Utils.getUserAvatarList()[indexImage].avatarImagePath;
+                        _selectedAvatar = widget.avatarInfoList[indexImage].getAvatarImagePath;
                       });
                     },
                     child: Image.asset(
-                      AvatarPickerButton.imagePath,
+                      _selectedAvatar,
                     )
                 ),
               ),

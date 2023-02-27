@@ -2,6 +2,7 @@ import 'package:aversan_pig_streaming/constants/font_sizes.dart';
 import 'package:aversan_pig_streaming/constants/response_string.dart';
 import 'package:aversan_pig_streaming/constants/margins.dart';
 import 'package:aversan_pig_streaming/routes/aps_routes.dart';
+import 'package:aversan_pig_streaming/utils/utils.dart';
 import 'package:aversan_pig_streaming/widgets/button_only_text.dart';
 import 'package:aversan_pig_streaming/widgets/circles_in_login_page.dart';
 import 'package:aversan_pig_streaming/widgets/confirm_password_text_field.dart';
@@ -16,7 +17,7 @@ import 'package:aversan_pig_streaming/api/api.dart';
 import 'package:aversan_pig_streaming/api/aps_encrypt.dart';
 import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
-import 'package:aversan_pig_streaming/widgets/avatar_picker_button.dart';
+import 'package:aversan_pig_streaming/widgets/avatar_button_picker.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
 
@@ -37,7 +38,7 @@ class SignUpPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Bottone per selezionare l'immagine avatar
-                AvatarPickerButton(),
+                AvatarButtonPicker(avatarInfoList: Utils.getUserAvatarList(),),
                 // Form di registrazione
                 SignUpForm(),
                 // Pulsante "Hai già un account?"
