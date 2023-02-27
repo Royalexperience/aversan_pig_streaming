@@ -7,7 +7,8 @@ import '../widgets/main_app_bar.dart';
 
 class AvatarGallery extends StatefulWidget {
   final List<UserAvatar> avatarInfoList;
-  const AvatarGallery({super.key, required this.avatarInfoList});
+  final int crossAxisCount;
+  const AvatarGallery({super.key, required this.avatarInfoList, this.crossAxisCount = 2});
 
   @override
   State<AvatarGallery> createState() => _AvatarGalleryState();
@@ -30,7 +31,7 @@ class _AvatarGalleryState extends State<AvatarGallery> {
           child: Container(
           alignment: Alignment.center,
           child: GridView.count(
-            crossAxisCount: 2,
+            crossAxisCount: widget.crossAxisCount,
             children: List.generate(
                 widget.avatarInfoList.length,
                 (index) {
