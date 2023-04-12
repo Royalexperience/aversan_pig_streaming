@@ -1,4 +1,3 @@
-import 'package:aversan_pig_streaming/constants/font_sizes.dart';
 import 'package:aversan_pig_streaming/constants/response_string.dart';
 import 'package:aversan_pig_streaming/constants/margins.dart';
 import 'package:aversan_pig_streaming/routes/aps_routes.dart';
@@ -20,6 +19,7 @@ import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
 import 'package:aversan_pig_streaming/widgets/avatar_button_picker.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
+import 'package:aversan_pig_streaming/models/user.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -101,56 +101,16 @@ class SignUpFormState extends State<SignUpForm> {
             backgroundColor: COLOR_TRANSPARENT,
             builder: (BuildContext context) {
               return DarkModalBottom(
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      // Titolo del modal
-                      Container(
-                        margin: EdgeInsets.only(top: marginMid(context)),
-                        child: Text(
-                        ALERT_ITALIAN,
-                        style: TextStyle(
-                            fontSize: FONT_SIZE_HUGE, 
-                            color: WHITE, 
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      // Messaggio del modal
-                      Container(
-                        margin: EdgeInsets.only(top: marginMid(context)),
-                        child: Text(
-                          EMAIL_ALREADY_TAKEN_ITALIAN,
-                          style: TextStyle(
-                            fontSize: FONT_SIZE_BIG, 
-                            color: WHITE, 
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      // Bottone che rimanda alla schermata di login
-                      Container(
-                        margin: EdgeInsets.only(top: marginMid(context)),
-                        child: RoundedButton(
-                          SIGN_IN_TEXT_ITALIAN, 
-                          () { Navigator.pushNamed(context, APSNamedRoute.signInPage); }, 
-                        ),
-                      ),
-                      // Bottone che rimanda alla schermata di recupero password
-                      Container(
-                        margin: EdgeInsets.only(top: marginSmall(context)),
-                        child: RoundedButton(
-                          RECOVER_YOUR_PASSWORD_ITALIAN, 
-                          () { Navigator.pushNamed(context, APSNamedRoute.forgotPasswordPage); }, 
-                        ),
-                      ),
-                    ],
+                title: ALERT_ITALIAN,
+                message: EMAIL_ALREADY_TAKEN_ITALIAN,
+                button1: RoundedButton(
+                    SIGN_IN_TEXT_ITALIAN, 
+                    () { Navigator.pushNamed(context, APSNamedRoute.signInPage); }, 
                   ),
-                ),
+                button2: RoundedButton(
+                    RECOVER_YOUR_PASSWORD_ITALIAN, 
+                    () { Navigator.pushNamed(context, APSNamedRoute.forgotPasswordPage); }, 
+                  )
               );
           },
         );
@@ -161,14 +121,11 @@ class SignUpFormState extends State<SignUpForm> {
   Future<void> _register() async {
     // Validate restituisce true se il form è valido, false in caso contrario.
     if (_formKey.currentState!.validate()) {
-      // Inserisci i dati in un oggetto JSON
-      var data = {
-        'email': _emailController.text,
-        'username': _usernameController.text,
-        'password': APSEncrypt.encrypt(_passController.text),
-      };
-      // Richiama il metodo post della classe API per inviare i dati al
-      // database
+      // Crea un nuovo oggetto user
+      User user = User(_usernameController.text, _emailController.text, APSEncrypt.encrypt(_passController.text));
+      // Converti in json
+      var data = user.toJson();
+      // Richiama il metodo post della classe API per inviare i dati al database
       final response = await API.post(data);
       // Controlla il responso
       _handleResponse(response);
