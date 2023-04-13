@@ -8,7 +8,7 @@
 - [x] RoundedButtonWithIcon
 - [x] DarkModal
 - [x] SignInForm
-- [ ] PasswordRecoveryForm
+- [x] PasswordRecoveryForm
 - [ ] AvatarButton
 - [ ] AvatarGallery
 - [ ] SignUpForm
