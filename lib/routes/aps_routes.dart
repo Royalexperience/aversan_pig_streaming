@@ -27,7 +27,7 @@ class APSNamedRoute {
       case signUpOkPage:
         return MaterialPageRoute(builder: (context) => SignUpOk());
       case forgotPasswordPage:
-        return MaterialPageRoute(builder: (context) => PasswordRecovery());
+        return MaterialPageRoute(builder: (context) => PasswordRecoveryPage());
       default:
         throw('This route name does not exit');
     }
