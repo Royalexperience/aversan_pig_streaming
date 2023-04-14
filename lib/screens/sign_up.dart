@@ -47,9 +47,9 @@ class SignUpPage extends StatelessWidget {
                 },),
                 // Padding per evitare che la tastiera copra la UI
                 Padding(
-                    padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).viewInsets.bottom
-                    )
+                  padding: EdgeInsets.only(
+                      top: MediaQuery.of(context).viewInsets.bottom
+                  )
                 ),
               ],
             ),
