@@ -64,6 +64,7 @@ flutter:
     - assets/images/avatar_jack.png
     - assets/images/avatar_mario.png
     - assets/images/avatar_genny.png
+    - .env
 
   fonts:
     - family: Coolvetica
