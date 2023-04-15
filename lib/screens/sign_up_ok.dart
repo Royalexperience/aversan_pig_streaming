@@ -1,6 +1,5 @@
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
 import 'package:aversan_pig_streaming/routes/aps_routes.dart';
-import 'package:aversan_pig_streaming/widgets/main_app_bar.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +14,6 @@ class SignUpOk extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: MainAppBar(COLOR_TRANSPARENT, WHITE),
       resizeToAvoidBottomInset: false,
       body: CustomPaint(
         child: Center(

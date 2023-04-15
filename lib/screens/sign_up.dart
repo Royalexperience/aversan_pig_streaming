@@ -82,19 +82,16 @@ class SignUpFormState extends State<SignUpForm> {
   final TextEditingController _confirmPassController = TextEditingController();
 
   void _handleResponse(Response response) {
-    // Avvenuta registrazione
-    if (response.statusCode == OK_REGISTRATION) {
-      // Gestisci l'avvenuta registrazione
-      if (mounted) {
-        Navigator.pushNamed(context, APSNamedRoute.signUpOkPage);
-      }
-    }
-    // Situazione di errore
-    else if (response.statusCode == INTERNAL_ERROR) {
-      // Ottieni il corpo del json
-      final responseBody = json.decode(response.body);
-      // Controlla il messaggio ricevuto in risposta
-      if (responseBody['message'] == DUPLICATED_EMAIL_MESSAGE) {
+    switch (response.statusCode) {
+      // Avvenuta registrazione
+      case HTTPStatusCode.STATUS_CREATED:
+        // Gestisci l'avvenuta registrazione
+        if (mounted) {
+          Navigator.pushNamed(context, APSNamedRoute.signUpOkPage);
+        }
+      break;
+      // Email già registrata
+      case HTTPStatusCode.STATUS_CONFLICT:
         // Mostra il modal di errore
         showModalBottomSheet<void>(
             context: context,
@@ -114,7 +111,13 @@ class SignUpFormState extends State<SignUpForm> {
               );
           },
         );
-      }
+      break;
+      // Errore del server
+      case HTTPStatusCode.STATUS_INTERNAL_SERVER_ERROR: 
+
+      break;
+      // Caso di default
+      default:
     }
   }
 

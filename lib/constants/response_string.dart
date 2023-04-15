@@ -1,5 +1,6 @@
 // ignore_for_file: constant_identifier_names
-const int OK_REGISTRATION = 201;
-const int INTERNAL_ERROR = 500;
-
-const String DUPLICATED_EMAIL_MESSAGE = '[ERROR 409] Email already registered';
+class HTTPStatusCode {
+  static const int STATUS_CREATED               = 201;
+  static const int STATUS_CONFLICT              = 409;
+  static const int STATUS_INTERNAL_SERVER_ERROR = 500;
+}
