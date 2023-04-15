@@ -15,7 +15,6 @@ abstract class Heading extends StatelessWidget {
   TextStyle getStyle();
 }
 
-
 class Heading1 extends Heading {
   const Heading1({super.key, required BuildContext context, required String text, Color? color}) : super(context: context, text: text, color: color);
 
@@ -30,7 +29,7 @@ class Heading1 extends Heading {
   @override
   TextStyle getStyle() {
     return TextStyle(
-      fontSize: fontSizeBig(context),
+      fontSize: fontSizeHuge(context),
       color: color,
     );
   }
@@ -50,7 +49,47 @@ class Heading2 extends Heading {
   @override
   TextStyle getStyle() {
     return TextStyle(
+      fontSize: fontSizeBig(context),
+      color: color,
+    );
+  }
+}
+
+class Heading3 extends Heading {
+  const Heading3({super.key, required BuildContext context, required String text, Color? color}) : super(context: context, text: text, color: color);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: getStyle(),
+    );
+  }
+
+  @override
+  TextStyle getStyle() {
+    return TextStyle(
       fontSize: fontSizeMid(context),
+      color: color,
+    );
+  }
+}
+
+class Heading4 extends Heading {
+  const Heading4({super.key, required BuildContext context, required String text, Color? color}) : super(context: context, text: text, color: color);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: getStyle(),
+    );
+  }
+
+  @override
+  TextStyle getStyle() {
+    return TextStyle(
+      fontSize: fontSizeSmall(context),
       color: color,
     );
   }

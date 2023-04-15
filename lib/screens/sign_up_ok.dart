@@ -1,8 +1,9 @@
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
+import 'package:aversan_pig_streaming/models/headings.dart';
 import 'package:aversan_pig_streaming/routes/aps_routes.dart';
+import 'package:aversan_pig_streaming/widgets/pink_wave.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
-
 import '../constants/strings.dart';
 import '../constants/themes/dark_color_scheme.dart';
 import '../constants/margins.dart';
@@ -15,6 +16,7 @@ class SignUpOk extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       resizeToAvoidBottomInset: false,
+      bottomNavigationBar: PinkWaveWidget(),
       body: CustomPaint(
         child: Center(
           child: SingleChildScrollView(
@@ -23,52 +25,27 @@ class SignUpOk extends StatelessWidget {
               children: [
                 // Testo registrazione avvenuta con successo
                 Center(
-                  child: Text(
-                    SIGN_UP_OK_ITALIAN_PT1,
-                    style: TextStyle(
-                      fontSize: fontSizeHuge(context),
-                      color: GREY,
-                    ),
-                  ),
+                  child: Heading1(context: context, text: SIGN_UP_OK_ITALIAN_PT1, color: GREY,),
                 ),
                 Center(
-                  child: Text(
-                    SIGN_UP_OK_ITALIAN_PT2,
-                    style: TextStyle(
-                      fontSize: fontSizeHuge(context),
-                      color: GREY,
-                    ),
-                  ),
-                ),
-                // Margine per creare lo spazio
-                Container(
-                  margin: EdgeInsets.only(bottom: marginSmall(context)
-                  ),
+                  child: Heading1(context: context, text: SIGN_UP_OK_ITALIAN_PT2, color: GREY,),
                 ),
                 // Testo di account creato
                 Container(
-                  margin: EdgeInsets.only(bottom: marginSmall(context)
-                  ),
+                  margin: EdgeInsets.only(top: marginMid(context), bottom: marginSmall(context)),
                   child: Center(
-                    child: Text(
-                      ACCOUNT_HAVE_BEEN_CREATED_ITALIAN,
-                      style: TextStyle(
-                        fontSize: fontSizeMid(context),
-                        color: GREY,
-                      ),
-                    ),
+                    child: Heading2(context: context, text: ACCOUNT_HAVE_BEEN_CREATED_ITALIAN, color: GREY,),
                   ),
                 ),
                 // Bottone che riporta alla pagina di login
                 Container(
-                  margin: EdgeInsets.only(
-                      top: marginSmall(context)
-                  ),
+                  margin: EdgeInsets.only(top: marginMid(context)),
                   child: RoundedButton(
-                      YOUR_FIRST_ACCESS_ITALIAN, () {
-                        // Rimanda alla pagina di login
-                        Navigator.pushNamed(context, APSNamedRoute.signInPage,);
-                      },),
+                    YOUR_FIRST_ACCESS_ITALIAN, () {
+                      // Rimanda alla pagina di login
+                      Navigator.pushNamed(context, APSNamedRoute.signInPage,);
+                    },
+                  ),
                 ),
               ],
             ),

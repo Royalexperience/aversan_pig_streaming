@@ -6,3 +6,9 @@ double marginSmall(BuildContext context) =>
 
 double marginMid(BuildContext context) =>
     screenHeightPercentage(context, percentage: 0.022);
+
+double marginBig(BuildContext context) =>
+    screenHeightPercentage(context, percentage: 0.092);
+
+double marginHuge(BuildContext context) =>
+    screenHeightPercentage(context, percentage: 0.122);

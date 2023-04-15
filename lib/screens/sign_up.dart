@@ -18,7 +18,6 @@ import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
 import 'package:aversan_pig_streaming/widgets/avatar_button_picker.dart';
 import 'package:http/http.dart';
-import 'dart:convert';
 import 'package:aversan_pig_streaming/models/user.dart';
 
 class SignUpPage extends StatelessWidget {

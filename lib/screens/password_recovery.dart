@@ -32,16 +32,16 @@ class PasswordRecoveryPage extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(bottom: marginSmall(context)),
                   child: Center(
-                    child: Heading1(context: context, text: PASSWORD_FORGOTTED_ITALIAN, color: GREY,),
+                    child: Heading2(context: context, text: PASSWORD_FORGOTTED_ITALIAN, color: GREY,),
                   ),
                 ),
                 Center(
-                  child: Heading2(context: context, text: DONT_WORRY_ITALIAN, color: GREY,),
+                  child: Heading3(context: context, text: DONT_WORRY_ITALIAN, color: GREY,),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: marginSmall(context)),
                   child: Center(
-                    child: Heading2(context: context, text: TYPE_EMAIL_ITALIAN, color: GREY),
+                    child: Heading3(context: context, text: TYPE_EMAIL_ITALIAN, color: GREY),
                   ),
                 ),
                 // Form per scrivere la e-mail
