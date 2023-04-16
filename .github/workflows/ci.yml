@@ -1,51 +1,43 @@
 name: CI
+
 on:
   push:
     branches:
       - sviluppo
 
 jobs:
-  flutter_test:
-    name: Run pub get
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
-        with:
-          java-version: "12.x"
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: "stable"
-      - run: flutter pub get
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-  build_ios:
-    name: Build Flutter (iOS)
-    needs: [flutter_test]
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
+      - name: Setup Java
+        uses: actions/setup-java@v2
         with:
-          java-version: "12.x"
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: "stable"
-      - run: flutter pub get
-      - run: flutter clean
-      - run: flutter build ios --release --no-codesign
+          java-version: '12.x'
 
-  build_appbundle:
-    name: Build Flutter (Android)
-    needs: [flutter_test]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
         with:
-          java-version: "12.x"
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: "stable"
-      - run: flutter pub get
-      - run: flutter clean
-      - run: flutter build appbundle
+          channel: 'stable'
+
+      - name: Install packages
+        run: flutter pub get
+
+      - name: Build Android
+        run: flutter build appbundle
+
+      - name: Build iOS
+        run: flutter build ios --release --no-codesign
+
+      - name: Set up environment variables
+        env:
+          ENV_FILE: .env
+        run: |
+          echo "ENV_FILE=$ENV_FILE" >> $GITHUB_ENV
+
+      - name: Copy .env to build directory
+        run: |
+          cp $ENV_FILE build/app/outputs/flutter-apk/.env
+          cp $ENV_FILE build/ios/Runner/.env
