@@ -1,51 +1,42 @@
 name: CI
-
 on:
   push:
     branches:
       - sviluppo
 
 jobs:
-  flutter-test:
-    name: Flutter test
+  flutter_test:
+    name: Run pub get
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: subosito/dart-action@v2
+      - uses: dart-lang/setup-dart@v1
         with:
-          dart-version: '2.18.1'
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: 'stable'
+          channel: stable
       - run: flutter pub get
-      - run: flutter test
 
-  build-android:
-    name: Build Android
-    runs-on: ubuntu-latest
-    needs: flutter-test
-    steps:
-      - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: 'stable'
-      - run: flutter build appbundle --no-sound-null-safety
-      - uses: actions/upload-artifact@v2
-        with:
-          name: app-release-bundle
-          path: build/app/outputs/bundle/release/app.aab
-
-  build-ios:
-    name: Build iOS
+  build_ios:
+    name: Build Flutter (iOS)
+    needs: [flutter_test]
     runs-on: macos-latest
-    needs: flutter-test
     steps:
       - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v1
+      - uses: dart-lang/setup-dart@v1
         with:
-          channel: 'stable'
-      - run: flutter build ios --no-codesign --no-sound-null-safety
-      - uses: actions/upload-artifact@v2
+          channel: stable
+      - run: flutter pub get
+      - run: flutter clean
+      - run: flutter build ios --release --no-codesign
+
+  build_appbundle:
+    name: Build Flutter (Android)
+    needs: [flutter_test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dart-lang/setup-dart@v1
         with:
-          name: ios-build
-          path: build/ios/archive/Runner.xcarchive/Products/Applications/Runner.app
+          channel: stable
+      - run: flutter pub get
+      - run: flutter clean
+      - run: flutter build appbundle
