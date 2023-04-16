@@ -6,40 +6,55 @@ on:
       - sviluppo
 
 jobs:
-  build:
+  flutter_test:
+    name: Run pub get
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
+      - uses: actions/checkout@v2
       - name: Setup Java
         uses: actions/setup-java@v2
         with:
-          uses: actions/setup-java@v2
-          java-version: '11'
           distribution: 'adopt'
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v1
+          java-version: '11'
+      - uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          flutter-version: '2.x'
+      - run: flutter pub get
 
-      - name: Install packages
-        run: flutter pub get
+  build_ios:
+    name: Build Flutter (iOS)
+    needs: [flutter_test]
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '2.x'
+      - run: flutter pub get
+      - run: flutter clean
+      - run: flutter build ios --release --no-codesign
 
-      - name: Build Android
-        run: flutter build appbundle
-
-      - name: Build iOS
-        run: flutter build ios --release --no-codesign
-
-      - name: Set up environment variables
-        env:
-          ENV_FILE: .env
-        run: |
-          echo "ENV_FILE=$ENV_FILE" >> $GITHUB_ENV
-
-      - name: Copy .env to build directory
-        run: |
-          cp $ENV_FILE build/app/outputs/flutter-apk/.env
-          cp $ENV_FILE build/ios/Runner/.env
+  build_appbundle:
+    name: Build Flutter (Android)
+    needs: [flutter_test]
+    runs-on: ubuntu-latest
+    env:
+      ENV_FILE: .env
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '2.x'
+      - run: flutter pub get
+      - run: flutter clean
+      - run: flutter build appbundle --release --dart-define=ENV_FILE=$ENV_FILE
