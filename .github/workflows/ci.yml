@@ -10,13 +10,6 @@ jobs:
     name: Flutter test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: subosito/dart-action@v2
-        with:
-          dart-version: '2.18.1'
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: 'stable'
       - run: flutter pub get
       - run: flutter test
 
