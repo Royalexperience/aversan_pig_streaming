@@ -77,3 +77,6 @@ flutter:
       fonts:
         - asset: assets/fonts/GoogleIcons.ttf
 #########################################
+
+exclude:
+  - .env
