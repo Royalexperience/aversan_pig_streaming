@@ -14,14 +14,12 @@ class API {
     // Leggi i valori dal file di configurazione
     String serverIP = dotenv.get('SERVER_IP');
     String insertUser = dotenv.get('INSERT_USER');
-    print(serverIP + insertUser);
     // Ritorna la stringa di connessione al db
     _postURL = "$serverIP$insertUser";
   }
 
   // Gestione dell'http post method
   static Future<http.Response> post(data) async {
-    print("[Inserimento Utente] going on");
     return await http.post(
       Uri.parse(_postURL),
       headers: {'Content-Type': 'application/json'},

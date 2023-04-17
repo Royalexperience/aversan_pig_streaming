@@ -1,3 +1,4 @@
+import 'package:aversan_pig_streaming/screens/error_500_screen.dart';
 import 'package:aversan_pig_streaming/screens/home.dart';
 import 'package:aversan_pig_streaming/screens/sign_in.dart';
 import 'package:aversan_pig_streaming/screens/password_recovery.dart';
@@ -15,6 +16,7 @@ class APSNamedRoute {
   static const String homePage = 'home';
   static const String forgotPasswordPage = 'forgotPassword';
   static const String avatarPickerScreen = 'avatarPickerScreen';
+  static const String error500Screen = 'error500Screen';
   // Controllo del flusso delle schermate
   static Route<dynamic> controller(RouteSettings settings) {
     switch (settings.name) {
@@ -28,6 +30,8 @@ class APSNamedRoute {
         return MaterialPageRoute(builder: (context) => SignUpOk());
       case forgotPasswordPage:
         return MaterialPageRoute(builder: (context) => PasswordRecoveryPage());
+      case error500Screen:
+        return MaterialPageRoute(builder: (context) => Error500Screen());
       default:
         throw('This route name does not exit');
     }

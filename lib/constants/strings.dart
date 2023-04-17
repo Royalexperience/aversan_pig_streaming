@@ -32,10 +32,13 @@ const String SHOW_TEXT_ITALIAN = "Mostra testo";
 const String HIDE_TEXT_ITALIAN = "Nascondi testo";
 const String PASSWORDS_DOES_NOT_MATCH_ITALIAN = "Le password non corrispondono";
 const String TYPE_A_VALID_EMAIL_ITALIAN = 'Inserisci una e-mail valida';
+const String IT_SEEMS_THAT_SOMETHING_GONE_WRONG_ITALIAN = "Ooops... Sembra che qualcosa è andato storto.";
+const String UNEXPECTED_ERROR_ITALIAN = "C'è stato un errore improvviso e siamo a  lavoro per risolverlo! Il servizio sarà disponibile a breve.";
 
 const String IMAGE_PIG_HD_2_PATH = 'assets/images/pig_Hd_video_white.png';
 const String IMAGE_SAD_PIG_PATH = 'assets/images/sadPigFoorgottenPassword.png';
 const String IMAGE_PIG_LAUNCHER_ICON_PATH = 'assets/images/pig.png';
+const String ERROR_500_IMAGE_PATH = 'assets/images/server_error_500.png';
 
 const String AVATAR_PATH = "assets/images/avatar_";
 const String AVATAR_DEFAULT_IMAGE = 'Default';

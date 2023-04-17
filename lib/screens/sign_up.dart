@@ -27,8 +27,8 @@ class SignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: MainAppBar(COLOR_TRANSPARENT, WHITE),
       resizeToAvoidBottomInset: false,
+      appBar: MainAppBar(COLOR_TRANSPARENT, WHITE),
       body: CustomPaint(
         painter: Circle(),
         child: Center(
@@ -113,7 +113,9 @@ class SignUpFormState extends State<SignUpForm> {
       break;
       // Errore del server
       case HTTPStatusCode.STATUS_INTERNAL_SERVER_ERROR: 
-
+        if (mounted) {
+          Navigator.pushNamed(context, APSNamedRoute.error500Screen);
+        }
       break;
       // Caso di default
       default:
