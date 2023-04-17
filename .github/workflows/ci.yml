@@ -48,4 +48,5 @@ jobs:
           channel: "stable"
       - run: flutter pub get
       - run: flutter clean
+      - run: touch .env
       - run: flutter build appbundle
