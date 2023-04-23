@@ -1,3 +1,4 @@
+import 'package:aversan_pig_streaming/api/google_sign_in_api.dart';
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
 import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
@@ -5,6 +6,7 @@ import 'package:aversan_pig_streaming/routes/aps_routes.dart';
 import 'package:aversan_pig_streaming/widgets/google_icons_icons.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../widgets/circles_in_login_page.dart';
 
@@ -61,7 +63,7 @@ class HomePage extends StatelessWidget {
             // Bottone custom per l'accesso con google
             RoundendButtonWithIcon(
               SIGN_UP_WGOOGLE_ITALIAN, 
-              () {}, 
+              _signIn, 
               color: WHITE,
               textColor: MAIN_BLACK, 
               GoogleIcons.google, MAIN_BLACK
@@ -71,4 +73,19 @@ class HomePage extends StatelessWidget {
       )
     );
   }
+
+  Future<void> _signIn() async {
+    try {
+      // sign-in operation
+      await GoogleSignInAPI.login();
+    } on PlatformException catch (e) {
+      // check error code
+      if (e.code == 'sign_in_failed') {
+        // handle cancelled sign-in
+      } else {
+        // handle other exceptions
+      }
+    }
+  }
 }
+
