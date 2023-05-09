@@ -1,6 +1,6 @@
 import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/routes/aps_routes.dart';
-import 'package:aversan_pig_streaming/screens/home.dart';
+import 'package:aversan_pig_streaming/screens/welcome.dart';
 import 'package:aversan_pig_streaming/utils/themes/theme.dart';
 import 'package:flutter/material.dart';
 import 'api/api.dart';
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: APPLICATION_NAME,
       debugShowCheckedModeBanner: false,
       theme: APSAppTheme.darkThemeData,
-      home: HomePage(),
+      home: WelcomePage(),
       onGenerateRoute: APSNamedRoute.controller,
     );
   }
