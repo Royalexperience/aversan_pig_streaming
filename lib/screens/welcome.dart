@@ -2,12 +2,12 @@ import 'package:aversan_pig_streaming/api/google_sign_in_api.dart';
 import 'package:aversan_pig_streaming/constants/font_sizes.dart';
 import 'package:aversan_pig_streaming/constants/strings.dart';
 import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
+import 'package:aversan_pig_streaming/models/user_login.dart';
 import 'package:aversan_pig_streaming/routes/aps_routes.dart';
 import 'package:aversan_pig_streaming/screens/home.dart';
 import 'package:aversan_pig_streaming/widgets/google_icons_icons.dart';
 import 'package:aversan_pig_streaming/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import '../widgets/circles_in_login_page.dart';
 
 // Schermata principale
@@ -63,7 +63,9 @@ class WelcomePage extends StatelessWidget {
             // Bottone custom per l'accesso con google
             RoundendButtonWithIcon(
               SIGN_UP_WGOOGLE_ITALIAN, 
-              (){_signIn(context);}, 
+              (){
+                _signIn(context);
+              }, 
               color: WHITE,
               textColor: MAIN_BLACK, 
               GoogleIcons.google, MAIN_BLACK
@@ -75,18 +77,10 @@ class WelcomePage extends StatelessWidget {
   }
 
   Future<void> _signIn(BuildContext context) async {
-    try {
-      final userPage = await GoogleSignInAPI.login();
-      // ignore: use_build_context_synchronously
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomePage(user: userPage)));
-      // sign-in operation
-    }
-    catch (e) {
-      if (e is PlatformException) { 
-        // ignore: avoid_print
-        print("Error code: ${e.code}");
-      }
-    }
+    final userPage = await GoogleSignInAPI.login();
+    UserLogin userLogin = UserLogin(userPage!.email, userPage.displayName!);
+    // ignore: use_build_context_synchronously
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomePage(user: userLogin)));
   }
 }
 

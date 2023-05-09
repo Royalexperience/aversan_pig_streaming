@@ -1,10 +1,10 @@
 import 'package:aversan_pig_streaming/constants/themes/dark_color_scheme.dart';
+import 'package:aversan_pig_streaming/models/user_login.dart';
 import 'package:aversan_pig_streaming/widgets/main_app_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 class HomePage extends StatelessWidget {
-  final GoogleSignInAccount? user;
+  final UserLogin user;
 
   const HomePage({super.key, required this.user});
 
@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             child: Text(
-            'Hello ${user?.email}', 
+            'Hello ${user.email}', 
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 20, color: WHITE, ),
           ),

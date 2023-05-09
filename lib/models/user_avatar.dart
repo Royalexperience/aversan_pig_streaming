@@ -1,4 +1,4 @@
-// Questa classe rappresenta le informazioni di ogni avatar presente nella avata gallery
+/// Questa classe rappresenta le informazioni di ogni avatar presente nella avata gallery
 class UserAvatar {
   final String _avatarName;
   final String _avatarImagePath;
